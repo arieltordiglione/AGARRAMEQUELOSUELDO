@@ -29,3 +29,32 @@ https://www.svgrepo.com/
 
 
 
+
+bracket pair colorizer 2
+andromeda
+auto close tag
+auto rename tagautodocstring python docstring generator
+autopep8
+bookmarks
+code runner
+codeium
+django
+GitLens- git supercharged
+intellicode #NO SE QUE ES
+intellicode API usage examples #NO SE QUE ES
+isort #NO SE QUE ES #NO SE QUE ES
+jinja
+Live server
+noctis #NO SE QUE ES
+prettier code formatter
+python extension pack
+python indent
+python preview
+spanish language pack
+vetur
+volar VUE
+
+https://vscode.dev/profile/github/6b14de873d747571c40fb8d47a07e982
+
+
+
