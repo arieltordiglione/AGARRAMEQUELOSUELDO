@@ -1,0 +1,31 @@
+#variables con colores bg, principal, secundario, color de fuente
+
+#fuente? carme roboto?
+
+#paleta de colores:
+https://www.colorwave.dev/
+https://paletadecolores.com.ar/
+
+
+#css
+https://uiverse.io/   #botones, cards, forms, inputs, TODO
+
+
+
+*BUEN FORM
+https://uiverse.io/Maximinodotpy/thin-sheep-13 /*USAR ESTE*/
+https://uiverse.io/guilhermeyohan/warm-mule-6
+https://uiverse.io/VijinV/mean-goose-92
+
+
+
+typing and delete text
+https://codepen.io/varunpvp/pen/jeVLrG
+
+
+# svg iconos
+https://www.svgrepo.com/
+
+
+
+
