@@ -94,6 +94,7 @@ json:
 	"prettier.semi": true,
 	"prettier.singleQuote": true,
 	"prettier.tabWidth": 2,
+	"editor.tabSize": 2,
 	"prettier.trailingComma": "es5",
 	"prettier.useTabs": true,
 	"prettier.vueIndentScriptAndStyle": false,
