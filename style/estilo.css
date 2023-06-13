@@ -122,7 +122,7 @@ header a {
 	height: 60px;
 	cursor: none;
 	pointer-events: none; /* Evita que el puntero afecte a los elementos debajo */
-	background-image: url(/icons/welding1.svg);
+	background-image: url(icons/welding1.svg);
 	background-size: cover;
 }
 
