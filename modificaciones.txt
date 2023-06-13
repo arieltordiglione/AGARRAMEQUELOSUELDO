@@ -54,7 +54,48 @@ spanish language pack
 vetur
 volar VUE
 
-https://vscode.dev/profile/github/6b14de873d747571c40fb8d47a07e982
+
+import:
+default 1
+https://vscode.dev/profile/github/76083f77c0cf6e35d17429a495c70eeb 
+ 
 
 
 
+json:
+
+
+
+{
+	"workbench.colorTheme": "Andromeda Colorizer",
+	"window.zoomLevel": 1,
+	"editor.bracketPairColorization.enabled": true,
+	"editor.guides.bracketPairs": "active",
+	"bracket-pair-colorizer-2.depreciation-notice": false,
+	"bracket-pair-colorizer-2.colors": ["Gold", "Orchid", "LightSkyBlue"],
+	"editor.minimap.enabled": false,
+	"liveServer.settings.donotShowInfoMsg": true,
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.renderWhitespace": "boundary",
+	"editor.formatOnSave": true,
+
+	"prettier.arrowParens": "always",
+	"prettier.bracketSameLine": false,
+	"prettier.bracketSpacing": true,
+	"prettier.embeddedLanguageFormatting": "auto",
+	"prettier.htmlWhitespaceSensitivity": "css",
+	"prettier.insertPragma": false,
+	"prettier.jsxSingleQuote": false,
+	"prettier.printWidth": 80,
+	"editor.rulers": [80],
+	"prettier.proseWrap": "preserve",
+	"prettier.quoteProps": "as-needed",
+	"prettier.requirePragma": false,
+	"prettier.semi": true,
+	"prettier.singleQuote": true,
+	"prettier.tabWidth": 2,
+	"prettier.trailingComma": "es5",
+	"prettier.useTabs": true,
+	"prettier.vueIndentScriptAndStyle": false,
+	"css.completion.completePropertyWithSemicolon": false
+}
