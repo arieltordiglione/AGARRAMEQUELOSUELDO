@@ -1,9 +1,13 @@
+console.log('script loaded');
+/* NAV  */
+
 hamburger.onclick = () => {
 	hamburger.classList.toggle('open');
 	nav_ul.classList.toggle('slide');
 	document.body.classList.toggle('noScroll');
 };
 
+/* BARRA DE PROGRESO-- SOMBRA EN NAV Y FOOTER */
 onscroll = () => {
 	header.classList.add('shadowHeader');
 	footer.classList.add('shadowFooter');
@@ -24,3 +28,12 @@ onscroll = () => {
 		progressBar.style.backgroundColor = 'green';
 	else progressBar.style.backgroundColor = 'rgb(250, 164, 4)';
 };
+
+/* PUNTERO MOUSE */
+document.addEventListener('mousemove', function (event) {
+	var pointer = document.getElementById('pointer');
+	var scrollX = window.scrollX || window.pageXOffset;
+	var scrollY = window.scrollY || window.pageYOffset;
+	pointer.style.left = event.clientX + scrollX - pointer.offsetWidth / 2 + 'px';
+	pointer.style.top = event.clientY + scrollY - pointer.offsetHeight / 2 + 'px';
+});

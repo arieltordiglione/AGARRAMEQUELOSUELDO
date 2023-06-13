@@ -28,6 +28,11 @@ https://www.svgrepo.com/
 
 
 
+#slider con mouse https://codepen.io/PointC/pen/EJWpry no anda en celu
+
+
+
+
 
 
 bracket pair colorizer 2
