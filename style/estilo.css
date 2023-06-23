@@ -1,9 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Carme&family=Roboto:wght@100;300;400;700&display=swap');
-
+/* letras: carme, roboto, montserrat */
+@import url('https://fonts.googleapis.com/css2?family=Carme&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 * {
 	/*la taille des elements inclus les margin et padding*/
-	font-family: 'Carme', 'sans-serif';
+	font-family: 'Montserrat', 'Carme', 'sans-serif';
+	font-weight: 400;
+	color: var(--colorfont1);
 	box-sizing: border-box;
+	/* border: 1px solid white; */
+}
+
+:root {
+	--colorbg1: #252525;
+	--colorbg2: #353535;
+	--color1: #ffa500;
+	--color2: #ff8c00;
+	--color3: #ff4500;
+	--colorfont1: #ccc;
+	--colorfont2: ;
 }
 
 html {
@@ -13,27 +26,24 @@ html {
 body {
 	margin: 0;
 	padding: 0;
-	background-color: #252525;
-	font-family: 'Roboto';
+	background-color: var(--colorbg1);
 }
 
 /**HEADER NAVBAR**/
 
 header {
-	/*empeche de cacher le texte en dessous contrairement à fixed */
-	background-color: #353535;
+	background-color: var(--colorbg2);
 	height: 60px;
 	width: 100%;
 	position: sticky;
 	top: 0;
-	box-shadow: 0px 4px 4px 0 #ff00002b;
+	box-shadow: 0px 3px 3px 0 var(--color3);
 	transition: box-shadow 1s;
 	z-index: 999;
-	/*pour rester toujours en avant-plan*/
 }
 
 .shadowHeader {
-	box-shadow: 1px 8px 7px 2px #ff51002b;
+	box-shadow: 1px 8px 7px 2px var(--color2);
 }
 
 header a {
@@ -103,76 +113,6 @@ header a {
 	animation: flou 0.5s;
 }
 
-@keyframes flou {
-	from {
-		transform: translateX(-20px);
-		filter: blur(2px);
-	}
-	to {
-		transform: translateX(0);
-		filter: blur(0);
-	}
-}
-
-/* PUNTERO MOUSE POINTER CURSOR */
-#pointer {
-	position: absolute;
-	width: 60px;
-	height: 60px;
-	cursor: none;
-	pointer-events: none; /* Evita que el puntero afecte a los elementos debajo */
-	background-image: url(../icons/welding.svg);
-	background-size: cover;
-}
-
-/**Articles**/
-
-h1 {
-	color: white;
-	text-align: center;
-	font-style: italic;
-}
-
-article {
-	width: 80%;
-	max-width: 900px;
-	margin: auto;
-	color: #debfbf;
-	margin-bottom: 50px;
-	scroll-margin-top: 60px;
-	/*Decale l'ancre de 60px afin de ne pas apparaitre sous le header*/
-}
-
-article img {
-	display: block;
-	border-radius: 5px;
-	transition: all 0.5s;
-	width: 100%;
-}
-
-article img:hover {
-	filter: hue-rotate(90deg);
-	border-radius: 50%;
-}
-
-article p {
-	font-size: 1.2rem;
-}
-
-/**Footer**/
-
-footer {
-	height: 200px;
-	color: #5f5f5f;
-	background-color: #2c2f31;
-	box-shadow: 0px -4px 4px 0 #ff00002b;
-	transition: box-shadow 1s;
-}
-
-.shadowFooter {
-	box-shadow: 1px -8px 7px 2px #ff51002b;
-}
-
 /*Icone Hamburger*/
 
 .hamburger {
@@ -219,8 +159,49 @@ footer {
 }
 
 .noScroll {
-	/*empeche le scroll sur le body via JS*/
 	overflow: hidden;
+}
+
+@keyframes flou {
+	from {
+		transform: translateX(-20px);
+		filter: blur(2px);
+	}
+	to {
+		transform: translateX(0);
+		filter: blur(0);
+	}
+}
+
+/* PUNTERO MOUSE POINTER CURSOR */
+#pointer__container {
+	position: relative;
+	width: 100%;
+	height: 360px;
+}
+#pointer {
+	position: absolute;
+	width: 80px;
+	height: 80px;
+	cursor: none;
+	/*pointer-events: none;  Evita que el puntero afecte a los elementos debajo */
+	background-image: url(../icons/welding.svg);
+	background-size: cover;
+	clip-path: inset(0);
+}
+
+/**Footer**/
+
+footer {
+	height: 200px;
+	color: #5f5f5f;
+	background-color: var(--colorbg2);
+	box-shadow: 0px -3px 3px 0 var(--color3);
+	transition: box-shadow 1s;
+}
+
+.shadowFooter {
+	box-shadow: 1px -8px 7px 2px var(--color2);
 }
 
 /**Media Queries**/
