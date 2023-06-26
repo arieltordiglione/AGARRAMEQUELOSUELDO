@@ -43,7 +43,7 @@ header {
 }
 
 .shadowHeader {
-	box-shadow: 1px 8px 7px 2px var(--color2);
+	box-shadow: 1px 6px 5px 2px rgba(255, 140, 0, 0.674);
 }
 
 header a {
@@ -60,7 +60,7 @@ header a {
 .progressBar {
 	height: 100%;
 	width: 0%;
-	background-color: rgb(250, 164, 4);
+	background-color: var(--color2);
 	transition: all 0.5s;
 }
 
@@ -201,7 +201,7 @@ footer {
 }
 
 .shadowFooter {
-	box-shadow: 1px -8px 7px 2px var(--color2);
+	box-shadow: 1px -6px 5px 2px rgba(255, 140, 0, 0.674);
 }
 
 /**Media Queries**/

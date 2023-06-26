@@ -24,9 +24,11 @@ onscroll = () => {
 	let max = totalHeight - visibleHeight;
 	progressBar.style.width = Math.floor((scrolling / max) * 100) + '%'; //width in %
 
-	if (progressBar.style.width == '100%')
+	if (scrolling / max > 0.98) {
 		progressBar.style.backgroundColor = 'green';
-	else progressBar.style.backgroundColor = 'rgb(250, 164, 4)';
+	} else {
+		progressBar.style.backgroundColor = '#ff8c00'; /* color2 */
+	}
 };
 
 /* PUNTERO MOUSE */
