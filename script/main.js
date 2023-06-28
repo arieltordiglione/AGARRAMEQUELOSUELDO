@@ -22,9 +22,9 @@ onscroll = () => {
 	let visibleHeight = page.clientHeight; //Height visible
 	let scrolling = page.scrollTop; //size of scroll
 	let max = totalHeight - visibleHeight;
-	progressBar.style.width = Math.floor((scrolling / max) * 100) + '%'; //width in %
+	progressBar.style.width = Math.floor(((scrolling * 1.01) / max) * 100) + '%'; //width in %
 
-	if (scrolling / max > 0.98) {
+	if (scrolling / max > 0.99) {
 		progressBar.style.backgroundColor = 'green';
 	} else {
 		progressBar.style.backgroundColor = '#ff8c00'; /* color2 */
