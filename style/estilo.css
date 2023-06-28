@@ -8,7 +8,7 @@
 	--color2: #ff8c00;
 	--color3: #ff4500;
 	--colorfont1: #ccc;
-	--colorfont2: ;
+	--colorfont2: #5f5f5f;
 }
 
 html {
@@ -16,7 +16,6 @@ html {
 }
 
 * {
-	/*la taille des elements inclus les margin et padding*/
 	font-family: 'Montserrat', 'Carme', 'sans-serif';
 	font-weight: 400;
 	color: var(--colorfont1);
@@ -28,6 +27,17 @@ body {
 	margin: 0;
 	padding: 0;
 	background-color: var(--colorbg1);
+}
+
+@keyframes flou {
+	from {
+		transform: translateX(-20px);
+		filter: blur(2px);
+	}
+	to {
+		transform: translateX(0);
+		filter: blur(0);
+	}
 }
 
 /**HEADER NAVBAR**/
@@ -79,7 +89,6 @@ header a {
 	display: flex;
 	align-items: center;
 	padding-left: 5px;
-	/*taille du texte dynamique*/
 	font-size: clamp(1.5rem, 5vw, 2.2rem);
 }
 
@@ -102,8 +111,7 @@ header a {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	height: 56px;
-	/*Aulieu de 60px à cause des 4px de la progressBar*/
+	height: 56px; /*En lugar de 60px debido a los 4px de la progressBar*/
 	width: 120px;
 	font-size: 1.5rem;
 }
@@ -114,7 +122,7 @@ header a {
 	animation: flou 0.5s;
 }
 
-/*Icone Hamburger*/
+/*ICONO HAMBURGER*/
 
 .hamburger {
 	display: none;
@@ -143,7 +151,7 @@ header a {
 .open .bar1,
 .open .bar2,
 .open .bar3 {
-	background-color: rgb(192, 127, 6);
+	background-color: var(--color2);
 }
 
 .open .bar1 {
@@ -161,17 +169,6 @@ header a {
 
 .noScroll {
 	overflow: hidden;
-}
-
-@keyframes flou {
-	from {
-		transform: translateX(-20px);
-		filter: blur(2px);
-	}
-	to {
-		transform: translateX(0);
-		filter: blur(0);
-	}
 }
 
 /* PUNTERO MOUSE POINTER CURSOR */
@@ -195,7 +192,7 @@ header a {
 
 footer {
 	height: 200px;
-	color: #5f5f5f;
+	color: var(--colorfont2);
 	background-color: var(--colorbg2);
 	box-shadow: 0px -3px 3px 0 var(--color2);
 	transition: box-shadow 1s;
@@ -205,7 +202,7 @@ footer {
 	box-shadow: 1px -6px 5px 2px rgba(255, 140, 0, 0.674);
 }
 
-/**Media Queries**/
+/*MEDIA QUERIES- RESPONSIVE*/
 
 @media (max-width: 800px) {
 	.hamburger {
