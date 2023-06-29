@@ -82,6 +82,54 @@ button .span-mother2 span {
 
 
 
+EN HTML YA AGREGUE 1
+ESTA HACIENDO====================================================
+
+
+.mother {
+	display: flex;
+	overflow: hidden;
+}
+
+.nav-ul li:hover .mother {
+  position: absolute;
+}
+
+.nav-ul li:hover .mother a {
+  transform: translateY(1.2em);
+}
+
+.mother a {
+  transition: .2s;
+}
+
+.mother2 {
+  display: flex;
+  position: absolute;
+  overflow: hidden;
+}
+
+FALTAA===================================
+
+button .span-mother2 span {
+  transform: translateY(-1.2em);
+}
+
+button:hover .span-mother2 span {
+  transform: translateY(0);
+}
+
+button .span-mother2 span {
+  transition: .2s;
+}
+
+
+
+
+
+
+
+
 
 
 
