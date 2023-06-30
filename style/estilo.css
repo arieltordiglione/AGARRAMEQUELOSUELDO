@@ -121,7 +121,7 @@ header a {
 
 .nav-ul li:hover,
 .nav-ul li.active {
-	background-color: var(--color2);
+	background-image: linear-gradient(var(--color1), var(--color2));
 	transform: skew(-30deg);
 }
 
