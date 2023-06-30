@@ -60,38 +60,18 @@ navItems.forEach((item) => item.addEventListener('click', toggleActiveClass));
 // Asignar el evento de clic a cada enlace
 navUl.addEventListener('click', toggleActiveClass);
 
-/* PUNTERO MOUSE */
-/* document.addEventListener('mousemove', function (event) {
-	var pointer = document.getElementById('pointer');
-	var container = document.getElementById('pointer__container'); // ID del contenedor
-	var containerRect = container.getBoundingClientRect();
-
-	var pointerX =
-		event.clientX -
-		containerRect.left -
-		pointer.offsetWidth / 2 +
-		window.pageXOffset;
-	var pointerY =
-		event.clientY -
-		containerRect.top -
-		pointer.offsetHeight / 2 +
-		window.pageYOffset;
-
-	// Limitar el movimiento horizontal dentro del contenedor
-	if (pointerX < 0) {
-		pointerX = 0;
-	} else if (pointerX > container.offsetWidth - pointer.offsetWidth) {
-		pointerX = container.offsetWidth - pointer.offsetWidth;
+/* WHATSAP BOTON */
+window.addEventListener('scroll', function () {
+	var scrollPosition = window.scrollY;
+	if (scrollPosition > 200) {
+		document.querySelector('.btn-wsp').classList.add('show-btn');
+		document.querySelector('.btn-wsp').classList.remove('hide-btn');
+	} else {
+		document.querySelector('.btn-wsp').classList.add('hide-btn');
+		document.querySelector('.btn-wsp').classList.remove('show-btn');
 	}
-
-	// Limitar el movimiento vertical dentro del contenedor
-	if (pointerY < 0) {
-		pointerY = 0;
-	} else if (pointerY > container.offsetHeight - pointer.offsetHeight) {
-		pointerY = container.offsetHeight - pointer.offsetHeight;
-	}
-
-	pointer.style.left = pointerX + 'px';
-	pointer.style.top = pointerY + 'px';
 });
- */
+
+/* FECHA COPYRIGTH FOOTER */
+let fecha = document.getElementById('fecha');
+fecha.innerHTML = new Date().getFullYear();
