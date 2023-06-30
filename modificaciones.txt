@@ -5,11 +5,10 @@
 	background-color: #faa41a;
     background-image: linear-gradient(#faa41a,#f58220);
 
-bgcolor ok
-letras blancas
+ 
 
 
-#fuente? carme roboto?
+ 
 
 #EFECTO PARA NAV
 html
@@ -86,42 +85,39 @@ EN HTML YA AGREGUE 1
 ESTA HACIENDO====================================================
 
 
+/* efecto boton se desliza hacia arriba */
 .mother {
 	display: flex;
 	overflow: hidden;
 }
 
 .nav-ul li:hover .mother {
-  position: absolute;
+	position: absolute;
 }
 
 .nav-ul li:hover .mother a {
-  transform: translateY(1.2em);
+	transform: translateY(1.2em);
 }
 
-.mother a {
-  transition: .2s;
-}
+
 
 .mother2 {
-  display: flex;
-  position: absolute;
-  overflow: hidden;
+	display: flex;
+	position: absolute;
+	overflow: hidden;
 }
 
-FALTAA===================================
-
-button .span-mother2 span {
-  transform: translateY(-1.2em);
+.mother2 a {
+	transform: translateY(-1.2em);
+	transition: 0.2s;
 }
 
-button:hover .span-mother2 span {
-  transform: translateY(0);
+.nav-ul li:hover .mother2 a {
+	transform: translateY(0);
 }
 
-button .span-mother2 span {
-  transition: .2s;
-}
+
+
 
 
 
@@ -213,6 +209,40 @@ https://www.svgrepo.com/
 
 
 
+/* PUNTERO MOUSE POINTER CURSOR */
+/* #pointer__container {
+	position: relative;
+	width: 100%;
+	height: 360px;
+}
+#pointer {
+	position: absolute;
+	width: 80px;
+	height: 80px;
+	cursor: none;
+	//pointer-events: none;  Evita que el puntero afecte a los elementos debajo 
+	background-image: url(../icons/welding.svg);
+	background-size: cover;
+	clip-path: inset(0);
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 bracket pair colorizer 2
 andromeda
@@ -284,3 +314,10 @@ json:
 	"prettier.vueIndentScriptAndStyle": false,
 	"css.completion.completePropertyWithSemicolon": false
 }
+
+
+
+
+
+
+

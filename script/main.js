@@ -1,11 +1,14 @@
 console.log('script loaded');
-/* NAV  */
+/* fijar el atributo active al visualizarlo */
+// Obtener los elementos de enlace en el menú de navegación
+const navLinks = document.querySelectorAll('.nav-ul a');
 
-hamburger.onclick = () => {
-	hamburger.classList.toggle('open');
-	nav_ul.classList.toggle('slide');
-	document.body.classList.toggle('noScroll');
-};
+// Obtener las secciones de contenido correspondientes a los enlaces
+const sections = Array.from(navLinks).map((link) =>
+	document.querySelector(link.getAttribute('href'))
+);
+
+/* NAV  */
 
 /* BARRA DE PROGRESO-- SOMBRA EN NAV Y FOOTER */
 onscroll = () => {
@@ -31,8 +34,34 @@ onscroll = () => {
 	}
 };
 
+/* HAMBURGER */
+hamburger.onclick = () => {
+	hamburger.classList.toggle('open');
+	nav_ul.classList.toggle('slide');
+	document.body.classList.toggle('noScroll');
+};
+
+/* .ACTIVE NARBAR */
+
+// Obtener todos los elementos "li" en la lista de navegación
+const navItems = document.querySelectorAll('.nav-ul li');
+const navUl = document.querySelector('.nav-ul');
+// Función para agregar o quitar la clase "active"
+function toggleActiveClass(event) {
+	// Remover la clase "active" de todos los elementos "li"
+	navItems.forEach((item) => item.classList.remove('active'));
+	// Agregar la clase "active" al elemento "li" seleccionado
+	event.target.closest('li').classList.add('active');
+}
+
+// Asignar el evento de clic a cada enlace
+navItems.forEach((item) => item.addEventListener('click', toggleActiveClass));
+
+// Asignar el evento de clic a cada enlace
+navUl.addEventListener('click', toggleActiveClass);
+
 /* PUNTERO MOUSE */
-document.addEventListener('mousemove', function (event) {
+/* document.addEventListener('mousemove', function (event) {
 	var pointer = document.getElementById('pointer');
 	var container = document.getElementById('pointer__container'); // ID del contenedor
 	var containerRect = container.getBoundingClientRect();
@@ -65,3 +94,4 @@ document.addEventListener('mousemove', function (event) {
 	pointer.style.left = pointerX + 'px';
 	pointer.style.top = pointerY + 'px';
 });
+ */

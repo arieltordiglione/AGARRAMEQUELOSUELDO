@@ -20,6 +20,7 @@ html {
 	font-weight: 400;
 	color: var(--colorfont1);
 	box-sizing: border-box;
+	cursor: url(../icons/welding.svg), pointer;
 	/* border: 1px solid white; */
 }
 
@@ -59,7 +60,7 @@ header {
 
 header a {
 	text-decoration: none;
-	color: white;
+	color: #fff;
 }
 
 .progressBar-container {
@@ -103,17 +104,19 @@ header a {
 .nav-ul {
 	display: flex;
 	margin: 0;
-	padding: 0;
+	padding-left: 20px;
 	list-style: none;
 	height: 56px;
 	padding-right: 15px;
+	position: relative;
+	overflow: hidden;
 }
 
 .nav-ul li {
 	padding: 0 10px;
 }
 
-.nav-ul a {
+.nav-ul li a {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -122,13 +125,41 @@ header a {
 	font-size: 1.5rem;
 }
 
-.nav-ul li:hover {
+.nav-ul li:hover,
+.nav-ul li.active {
 	background-color: var(--color2);
 	transform: skew(-30deg);
 }
 
-.nav-ul li:hover a {
+.nav-ul li:hover a,
+.nav-ul li.active a {
 	transform: skew(30deg);
+}
+
+/* mover boton hacia arriba y aparece nuevo desde abajo */
+.mother {
+	position: relative;
+	top: 0;
+	opacity: 1;
+	transition: 0.3s;
+}
+
+.mother2 {
+	position: absolute;
+	top: 100%;
+	opacity: 0;
+	transition: 0.3s;
+	display: none;
+}
+
+.nav-ul li:hover .mother {
+	opacity: 0;
+	top: -50px; /* Ajusta esta valor según tu necesidad para moverlo hacia arriba */
+}
+
+.nav-ul li:hover .mother2 {
+	opacity: 1;
+	top: 0;
 }
 
 /*ICONO HAMBURGER*/
@@ -180,23 +211,6 @@ header a {
 	overflow: hidden;
 }
 
-/* PUNTERO MOUSE POINTER CURSOR */
-#pointer__container {
-	position: relative;
-	width: 100%;
-	height: 360px;
-}
-#pointer {
-	position: absolute;
-	width: 80px;
-	height: 80px;
-	cursor: none;
-	/*pointer-events: none;  Evita que el puntero afecte a los elementos debajo */
-	background-image: url(../icons/welding.svg);
-	background-size: cover;
-	clip-path: inset(0);
-}
-
 /**Footer**/
 
 footer {
@@ -239,5 +253,31 @@ footer {
 		/* padding-left: 5px; */
 		width: 50%;
 		border-bottom: 1px solid rgba(192, 127, 6, 0.2);
+	}
+
+	/* efecto texto en NAVBAR responsive */
+	.mother {
+		position: relative;
+		left: 0;
+		opacity: 1;
+		transition: 0.3s;
+	}
+
+	.mother2 {
+		position: absolute;
+		left: 50px;
+		opacity: 0;
+		transition: 0.3s;
+		display: none;
+	}
+
+	.nav-ul li:hover .mother {
+		opacity: 0;
+		left: -50px;
+	}
+
+	.nav-ul li:hover .mother2 {
+		opacity: 1;
+		left: 0;
 	}
 }
