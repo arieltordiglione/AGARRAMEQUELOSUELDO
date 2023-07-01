@@ -21,7 +21,7 @@ html {
 	font-weight: 400;
 
 	box-sizing: border-box;
-	cursor: url(../icons/welding.svg), pointer;
+	cursor: url(../assets/icons/welding.svg), pointer;
 	/* border: 1px solid white; */
 }
 
@@ -230,6 +230,34 @@ header a {
 
 .noScroll {
 	overflow: hidden;
+}
+
+/* PORTADA */
+#portada {
+	width: 100%;
+	height: 100vh;
+
+	position: relative;
+}
+.portada__titulo {
+	position: absolute;
+}
+
+.portada__titulo h1 {
+	font-size: 8em;
+	color: #fff;
+}
+
+.portada__titulo h3 {
+	font-size: 2em;
+	color: #fff;
+}
+
+.portada__video {
+	opacity: 0.5;
+	object-fit: cover;
+	width: 100%;
+	height: 100%;
 }
 
 /* BOTON WHATSAPP FLOTANTE */

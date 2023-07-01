@@ -1,9 +1,4 @@
-#variables con colores bg, principal, secundario, color de fuente
-#color naranja de seguir en insta= rgb(242, 134, 29) o #F2861D
-  
-#BOTONES COLOR:
-	background-color: #faa41a;
-    background-image: linear-gradient(#faa41a,#f58220);
+arreglar portada fixed
 
  
 
