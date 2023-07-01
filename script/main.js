@@ -62,14 +62,18 @@ navUl.addEventListener('click', toggleActiveClass);
 
 /* WHATSAP BOTON */
 window.addEventListener('scroll', function () {
-	var scrollPosition = window.scrollY;
-	if (scrollPosition > 200) {
-		document.querySelector('.btn-wsp').classList.add('show-btn');
-		document.querySelector('.btn-wsp').classList.remove('hide-btn');
-	} else {
-		document.querySelector('.btn-wsp').classList.add('hide-btn');
-		document.querySelector('.btn-wsp').classList.remove('show-btn');
-	}
+	let scrollPosition = window.scrollY;
+	let btns = document.querySelectorAll('.btn');
+
+	btns.forEach(function (btn) {
+		if (scrollPosition > 200) {
+			btn.classList.add('show-btn');
+			btn.classList.remove('hide-btn');
+		} else {
+			btn.classList.add('hide-btn');
+			btn.classList.remove('show-btn');
+		}
+	});
 });
 
 /* FECHA COPYRIGTH FOOTER */
