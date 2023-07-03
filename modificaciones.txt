@@ -9,7 +9,7 @@ https://www.youtube.com/watch?v=bs6WPzeCF7I&ab_channel=HolasoyEdu
 
 
 
-
+A cada seccion darle un margin o padding top del tamaño de la navbar
 
 
 

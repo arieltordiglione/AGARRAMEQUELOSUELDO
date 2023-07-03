@@ -9,11 +9,15 @@
 	keep your source code private/proprietary by purchasing
 	a commercial license from https://scrollrevealjs.org/
 */
+
 (function (global, factory) {
-	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
-	typeof define === 'function' && define.amd ? define(factory) :
-	(global = global || self, global.ScrollReveal = factory());
-}(this, function () { 'use strict';
+	typeof exports === 'object' && typeof module !== 'undefined'
+		? (module.exports = factory())
+		: typeof define === 'function' && define.amd
+		? define(factory)
+		: ((global = global || self), (global.ScrollReveal = factory()));
+})(this, function () {
+	'use strict';
 
 	var defaults = {
 		delay: 0,
@@ -26,7 +30,7 @@
 		rotate: {
 			x: 0,
 			y: 0,
-			z: 0
+			z: 0,
 		},
 		scale: 1,
 		cleanup: false,
@@ -40,12 +44,12 @@
 			top: 0,
 			right: 0,
 			bottom: 0,
-			left: 0
+			left: 0,
 		},
 		afterReset: function afterReset() {},
 		afterReveal: function afterReveal() {},
 		beforeReset: function beforeReset() {},
-		beforeReveal: function beforeReveal() {}
+		beforeReveal: function beforeReveal() {},
 	};
 
 	function failure() {
@@ -57,9 +61,9 @@
 			reveal: function reveal() {},
 			sync: function sync() {},
 			get noop() {
-				return true
-			}
-		}
+				return true;
+			},
+		};
 	}
 
 	function success() {
@@ -105,7 +109,7 @@
 			: x !== null &&
 					typeof x === 'object' &&
 					typeof x.nodeType === 'number' &&
-					typeof x.nodeName === 'string'
+					typeof x.nodeName === 'string';
 	}
 
 	/*! @license is-dom-node-list v1.2.1
@@ -142,7 +146,7 @@
 					typeof x === 'object' &&
 					typeof x.length === 'number' &&
 					regex.test(prototypeToString) &&
-					(x.length === 0 || isDomNode(x[0]))
+					(x.length === 0 || isDomNode(x[0]));
 	}
 
 	/*! @license Tealight v0.3.6
@@ -170,20 +174,28 @@
 	*/
 
 	function tealight(target, context) {
-	  if ( context === void 0 ) { context = document; }
+		if (context === void 0) {
+			context = document;
+		}
 
-	  if (target instanceof Array) { return target.filter(isDomNode); }
-	  if (isDomNode(target)) { return [target]; }
-	  if (isDomNodeList(target)) { return Array.prototype.slice.call(target); }
-	  if (typeof target === "string") {
-	    try {
-	      var query = context.querySelectorAll(target);
-	      return Array.prototype.slice.call(query);
-	    } catch (err) {
-	      return [];
-	    }
-	  }
-	  return [];
+		if (target instanceof Array) {
+			return target.filter(isDomNode);
+		}
+		if (isDomNode(target)) {
+			return [target];
+		}
+		if (isDomNodeList(target)) {
+			return Array.prototype.slice.call(target);
+		}
+		if (typeof target === 'string') {
+			try {
+				var query = context.querySelectorAll(target);
+				return Array.prototype.slice.call(query);
+			} catch (err) {
+				return [];
+			}
+		}
+		return [];
 	}
 
 	function isObject(x) {
@@ -192,27 +204,34 @@
 			x instanceof Object &&
 			(x.constructor === Object ||
 				Object.prototype.toString.call(x) === '[object Object]')
-		)
+		);
 	}
 
 	function each(collection, callback) {
 		if (isObject(collection)) {
 			var keys = Object.keys(collection);
-			return keys.forEach(function (key) { return callback(collection[key], key, collection); })
+			return keys.forEach(function (key) {
+				return callback(collection[key], key, collection);
+			});
 		}
 		if (collection instanceof Array) {
-			return collection.forEach(function (item, i) { return callback(item, i, collection); })
+			return collection.forEach(function (item, i) {
+				return callback(item, i, collection);
+			});
 		}
-		throw new TypeError('Expected either an array or object literal.')
+		throw new TypeError('Expected either an array or object literal.');
 	}
 
 	function logger(message) {
-		var details = [], len = arguments.length - 1;
-		while ( len-- > 0 ) details[ len ] = arguments[ len + 1 ];
+		var details = [],
+			len = arguments.length - 1;
+		while (len-- > 0) details[len] = arguments[len + 1];
 
 		if (this.constructor.debug && console) {
-			var report = "%cScrollReveal: " + message;
-			details.forEach(function (detail) { return (report += "\n — " + detail); });
+			var report = '%cScrollReveal: ' + message;
+			details.forEach(function (detail) {
+				return (report += '\n — ' + detail);
+			});
 			console.log(report, 'color: #ea654b;'); // eslint-disable-line no-console
 		}
 	}
@@ -220,10 +239,12 @@
 	function rinse() {
 		var this$1 = this;
 
-		var struct = function () { return ({
-			active: [],
-			stale: []
-		}); };
+		var struct = function () {
+			return {
+				active: [],
+				stale: [],
+			};
+		};
 
 		var elementIds = struct();
 		var sequenceIds = struct();
@@ -238,7 +259,7 @@
 				elementIds.active.push(id);
 			});
 		} catch (e) {
-			throw e
+			throw e;
 		}
 		/**
 		 * Destroy stale elements.
@@ -249,7 +270,9 @@
 			}
 		});
 
-		each(elementIds.stale, function (staleId) { return delete this$1.store.elements[staleId]; });
+		each(elementIds.stale, function (staleId) {
+			return delete this$1.store.elements[staleId];
+		});
 
 		/**
 		 * Take stock of active container and sequence IDs.
@@ -290,7 +313,9 @@
 			}
 		});
 
-		each(sequenceIds.stale, function (staleId) { return delete this$1.store.sequences[staleId]; });
+		each(sequenceIds.stale, function (staleId) {
+			return delete this$1.store.sequences[staleId];
+		});
 	}
 
 	/*! @license Rematrix v0.3.0
@@ -333,10 +358,10 @@
 	 */
 	function format(source) {
 		if (source.constructor !== Array) {
-			throw new TypeError('Expected array.')
+			throw new TypeError('Expected array.');
 		}
 		if (source.length === 16) {
-			return source
+			return source;
 		}
 		if (source.length === 6) {
 			var matrix = identity();
@@ -346,9 +371,9 @@
 			matrix[5] = source[3];
 			matrix[12] = source[4];
 			matrix[13] = source[5];
-			return matrix
+			return matrix;
 		}
-		throw new RangeError('Expected array with either 6 or 16 values.')
+		throw new RangeError('Expected array with either 6 or 16 values.');
 	}
 
 	/**
@@ -364,7 +389,7 @@
 		for (var i = 0; i < 16; i++) {
 			i % 5 == 0 ? matrix.push(1) : matrix.push(0);
 		}
-		return matrix
+		return matrix;
 	}
 
 	/**
@@ -397,7 +422,7 @@
 			}
 		}
 
-		return product
+		return product;
 	}
 
 	/**
@@ -416,10 +441,10 @@
 			var match = source.match(/matrix(3d)?\(([^)]+)\)/);
 			if (match) {
 				var raw = match[2].split(', ').map(parseFloat);
-				return format(raw)
+				return format(raw);
 			}
 		}
-		return identity()
+		return identity();
 	}
 
 	/**
@@ -429,14 +454,14 @@
 	 * @return {array}
 	 */
 	function rotateX(angle) {
-		var theta = Math.PI / 180 * angle;
+		var theta = (Math.PI / 180) * angle;
 		var matrix = identity();
 
 		matrix[5] = matrix[10] = Math.cos(theta);
 		matrix[6] = matrix[9] = Math.sin(theta);
 		matrix[9] *= -1;
 
-		return matrix
+		return matrix;
 	}
 
 	/**
@@ -446,14 +471,14 @@
 	 * @return {array}
 	 */
 	function rotateY(angle) {
-		var theta = Math.PI / 180 * angle;
+		var theta = (Math.PI / 180) * angle;
 		var matrix = identity();
 
 		matrix[0] = matrix[10] = Math.cos(theta);
 		matrix[2] = matrix[8] = Math.sin(theta);
 		matrix[2] *= -1;
 
-		return matrix
+		return matrix;
 	}
 
 	/**
@@ -463,14 +488,14 @@
 	 * @return {array}
 	 */
 	function rotateZ(angle) {
-		var theta = Math.PI / 180 * angle;
+		var theta = (Math.PI / 180) * angle;
 		var matrix = identity();
 
 		matrix[0] = matrix[5] = Math.cos(theta);
 		matrix[1] = matrix[4] = Math.sin(theta);
 		matrix[4] *= -1;
 
-		return matrix
+		return matrix;
 	}
 
 	/**
@@ -488,7 +513,7 @@
 		matrix[0] = scalar;
 		matrix[5] = typeof scalarY === 'number' ? scalarY : scalar;
 
-		return matrix
+		return matrix;
 	}
 
 	/**
@@ -500,7 +525,7 @@
 	function translateX(distance) {
 		var matrix = identity();
 		matrix[12] = distance;
-		return matrix
+		return matrix;
 	}
 
 	/**
@@ -512,7 +537,7 @@
 	function translateY(distance) {
 		var matrix = identity();
 		matrix[13] = distance;
-		return matrix
+		return matrix;
 	}
 
 	var getPrefixedCssProp = (function () {
@@ -520,26 +545,28 @@
 		var style = document.documentElement.style;
 
 		function getPrefixedCssProperty(name, source) {
-			if ( source === void 0 ) source = style;
+			if (source === void 0) source = style;
 
 			if (name && typeof name === 'string') {
 				if (properties[name]) {
-					return properties[name]
+					return properties[name];
 				}
 				if (typeof source[name] === 'string') {
-					return (properties[name] = name)
+					return (properties[name] = name);
 				}
-				if (typeof source[("-webkit-" + name)] === 'string') {
-					return (properties[name] = "-webkit-" + name)
+				if (typeof source['-webkit-' + name] === 'string') {
+					return (properties[name] = '-webkit-' + name);
 				}
-				throw new RangeError(("Unable to find \"" + name + "\" style property."))
+				throw new RangeError('Unable to find "' + name + '" style property.');
 			}
-			throw new TypeError('Expected a string.')
+			throw new TypeError('Expected a string.');
 		}
 
-		getPrefixedCssProperty.clearCache = function () { return (properties = {}); };
+		getPrefixedCssProperty.clearCache = function () {
+			return (properties = {});
+		};
 
-		return getPrefixedCssProperty
+		return getPrefixedCssProperty;
 	})();
 
 	function style(element) {
@@ -554,11 +581,24 @@
 		var inlineStyle = element.node.getAttribute('style') || '';
 		var inlineMatch = inlineStyle.match(/[\w-]+\s*:\s*[^;]+\s*/gi) || [];
 
-		inline.computed = inlineMatch ? inlineMatch.map(function (m) { return m.trim(); }).join('; ') + ';' : '';
+		inline.computed = inlineMatch
+			? inlineMatch
+					.map(function (m) {
+						return m.trim();
+					})
+					.join('; ') + ';'
+			: '';
 
-		inline.generated = inlineMatch.some(function (m) { return m.match(/visibility\s?:\s?visible/i); })
+		inline.generated = inlineMatch.some(function (m) {
+			return m.match(/visibility\s?:\s?visible/i);
+		})
 			? inline.computed
-			: inlineMatch.concat( ['visibility: visible']).map(function (m) { return m.trim(); }).join('; ') + ';';
+			: inlineMatch
+					.concat(['visibility: visible'])
+					.map(function (m) {
+						return m.trim();
+					})
+					.join('; ') + ';';
 
 		/**
 		 * Generate opacity styles
@@ -569,8 +609,14 @@
 			: parseFloat(computed.opacity);
 
 		var opacity = {
-			computed: computedOpacity !== configOpacity ? ("opacity: " + computedOpacity + ";") : '',
-			generated: computedOpacity !== configOpacity ? ("opacity: " + configOpacity + ";") : ''
+			computed:
+				computedOpacity !== configOpacity
+					? 'opacity: ' + computedOpacity + ';'
+					: '',
+			generated:
+				computedOpacity !== configOpacity
+					? 'opacity: ' + configOpacity + ';'
+					: '',
 		};
 
 		/**
@@ -579,7 +625,8 @@
 		var transformations = [];
 
 		if (parseFloat(config.distance)) {
-			var axis = config.origin === 'top' || config.origin === 'bottom' ? 'Y' : 'X';
+			var axis =
+				config.origin === 'top' || config.origin === 'bottom' ? 'Y' : 'X';
 
 			/**
 			 * Let’s make sure our our pixel distances are negative for top and left.
@@ -587,7 +634,7 @@
 			 */
 			var distance = config.distance;
 			if (config.origin === 'top' || config.origin === 'left') {
-				distance = /^-/.test(distance) ? distance.substr(1) : ("-" + distance);
+				distance = /^-/.test(distance) ? distance.substr(1) : '-' + distance;
 			}
 
 			var ref = distance.match(/(^-?\d+\.?\d?)|(em$|px$|%$)/g);
@@ -597,10 +644,10 @@
 			switch (unit) {
 				case 'em':
 					distance = parseInt(computed.fontSize) * value;
-					break
+					break;
 				case 'px':
 					distance = value;
-					break
+					break;
 				case '%':
 					/**
 					 * Here we use `getBoundingClientRect` instead of
@@ -616,9 +663,9 @@
 						axis === 'Y'
 							? (element.node.getBoundingClientRect().height * value) / 100
 							: (element.node.getBoundingClientRect().width * value) / 100;
-					break
+					break;
 				default:
-					throw new RangeError('Unrecognized or missing distance unit.')
+					throw new RangeError('Unrecognized or missing distance unit.');
 			}
 
 			if (axis === 'Y') {
@@ -628,9 +675,15 @@
 			}
 		}
 
-		if (config.rotate.x) { transformations.push(rotateX(config.rotate.x)); }
-		if (config.rotate.y) { transformations.push(rotateY(config.rotate.y)); }
-		if (config.rotate.z) { transformations.push(rotateZ(config.rotate.z)); }
+		if (config.rotate.x) {
+			transformations.push(rotateX(config.rotate.x));
+		}
+		if (config.rotate.y) {
+			transformations.push(rotateY(config.rotate.y));
+		}
+		if (config.rotate.z) {
+			transformations.push(rotateZ(config.rotate.z));
+		}
 		if (config.scale !== 1) {
 			if (config.scale === 0) {
 				/**
@@ -662,20 +715,24 @@
 			 */
 			transform.computed = {
 				raw: computed[transform.property],
-				matrix: parse(computed[transform.property])
+				matrix: parse(computed[transform.property]),
 			};
 
 			transformations.unshift(transform.computed.matrix);
 			var product = transformations.reduce(multiply);
 
 			transform.generated = {
-				initial: ((transform.property) + ": matrix3d(" + (product.join(', ')) + ");"),
-				final: ((transform.property) + ": matrix3d(" + (transform.computed.matrix.join(', ')) + ");")
+				initial: transform.property + ': matrix3d(' + product.join(', ') + ');',
+				final:
+					transform.property +
+					': matrix3d(' +
+					transform.computed.matrix.join(', ') +
+					');',
 			};
 		} else {
 			transform.generated = {
 				initial: '',
-				final: ''
+				final: '',
 			};
 		}
 
@@ -694,15 +751,31 @@
 
 			if (opacity.generated) {
 				transition.fragments.push({
-					delayed: ("opacity " + (duration / 1000) + "s " + easing + " " + (delay / 1000) + "s"),
-					instant: ("opacity " + (duration / 1000) + "s " + easing + " 0s")
+					delayed:
+						'opacity ' +
+						duration / 1000 +
+						's ' +
+						easing +
+						' ' +
+						delay / 1000 +
+						's',
+					instant: 'opacity ' + duration / 1000 + 's ' + easing + ' 0s',
 				});
 			}
 
 			if (transform.generated.initial) {
 				transition.fragments.push({
-					delayed: ((transform.property) + " " + (duration / 1000) + "s " + easing + " " + (delay / 1000) + "s"),
-					instant: ((transform.property) + " " + (duration / 1000) + "s " + easing + " 0s")
+					delayed:
+						transform.property +
+						' ' +
+						duration / 1000 +
+						's ' +
+						easing +
+						' ' +
+						delay / 1000 +
+						's',
+					instant:
+						transform.property + ' ' + duration / 1000 + 's ' + easing + ' 0s',
 				});
 			}
 
@@ -716,30 +789,32 @@
 			if (hasCustomTransition) {
 				transition.fragments.unshift({
 					delayed: transition.computed,
-					instant: transition.computed
+					instant: transition.computed,
 				});
 			}
 
 			var composed = transition.fragments.reduce(
 				function (composition, fragment, i) {
-					composition.delayed += i === 0 ? fragment.delayed : (", " + (fragment.delayed));
-					composition.instant += i === 0 ? fragment.instant : (", " + (fragment.instant));
-					return composition
+					composition.delayed +=
+						i === 0 ? fragment.delayed : ', ' + fragment.delayed;
+					composition.instant +=
+						i === 0 ? fragment.instant : ', ' + fragment.instant;
+					return composition;
 				},
 				{
 					delayed: '',
-					instant: ''
+					instant: '',
 				}
 			);
 
 			transition.generated = {
-				delayed: ((transition.property) + ": " + (composed.delayed) + ";"),
-				instant: ((transition.property) + ": " + (composed.instant) + ";")
+				delayed: transition.property + ': ' + composed.delayed + ';',
+				instant: transition.property + ': ' + composed.instant + ';',
 			};
 		} else {
 			transition.generated = {
 				delayed: '',
-				instant: ''
+				instant: '',
 			};
 		}
 
@@ -748,8 +823,8 @@
 			opacity: opacity,
 			position: position,
 			transform: transform,
-			transition: transition
-		}
+			transition: transition,
+		};
 	}
 
 	/**
@@ -759,7 +834,7 @@
 	 * @param {Node}   [el]  Element to receive styles.
 	 * @param {string} [declaration] Styles to apply.
 	 */
-	function applyStyle (el, declaration) {
+	function applyStyle(el, declaration) {
 		declaration.split(';').forEach(function (pair) {
 			var ref = pair.split(':');
 			var property = ref[0];
@@ -789,14 +864,14 @@
 				}
 			});
 		} catch (e) {
-			return logger.call(this, 'Clean failed.', e.message)
+			return logger.call(this, 'Clean failed.', e.message);
 		}
 
 		if (dirty) {
 			try {
 				rinse.call(this);
 			} catch (e) {
-				return logger.call(this, 'Clean failed.', e.message)
+				return logger.call(this, 'Clean failed.', e.message);
 			}
 		}
 	}
@@ -829,13 +904,14 @@
 			containers: {},
 			elements: {},
 			history: [],
-			sequences: {}
+			sequences: {},
 		};
 	}
 
 	function deepAssign(target) {
-		var sources = [], len = arguments.length - 1;
-		while ( len-- > 0 ) sources[ len ] = arguments[ len + 1 ];
+		var sources = [],
+			len = arguments.length - 1;
+		while (len-- > 0) sources[len] = arguments[len + 1];
 
 		if (isObject(target)) {
 			each(sources, function (source) {
@@ -850,21 +926,23 @@
 					}
 				});
 			});
-			return target
+			return target;
 		} else {
-			throw new TypeError('Target must be an object literal.')
+			throw new TypeError('Target must be an object literal.');
 		}
 	}
 
 	function isMobile(agent) {
-		if ( agent === void 0 ) agent = navigator.userAgent;
+		if (agent === void 0) agent = navigator.userAgent;
 
-		return /Android|iPhone|iPad|iPod/i.test(agent)
+		return /Android|iPhone|iPad|iPod/i.test(agent);
 	}
 
 	var nextUniqueId = (function () {
 		var uid = 0;
-		return function () { return uid++; }
+		return function () {
+			return uid++;
+		};
 	})();
 
 	function initialize() {
@@ -885,7 +963,14 @@
 				element.revealed = false;
 			}
 
-			applyStyle(element.node, styles.filter(function (s) { return s !== ''; }).join(' '));
+			applyStyle(
+				element.node,
+				styles
+					.filter(function (s) {
+						return s !== '';
+					})
+					.join(' ')
+			);
 		});
 
 		each(this.store.containers, function (container) {
@@ -910,7 +995,7 @@
 	}
 
 	function animate(element, force) {
-		if ( force === void 0 ) force = {};
+		if (force === void 0) force = {};
 
 		var pristine = force.pristine || this.pristine;
 		var delayed =
@@ -919,14 +1004,15 @@
 			(element.config.useDelay === 'once' && !element.seen);
 
 		var shouldReveal = element.visible && !element.revealed;
-		var shouldReset = !element.visible && element.revealed && element.config.reset;
+		var shouldReset =
+			!element.visible && element.revealed && element.config.reset;
 
 		if (force.reveal || shouldReveal) {
-			return triggerReveal.call(this, element, delayed)
+			return triggerReveal.call(this, element, delayed);
 		}
 
 		if (force.reset || shouldReset) {
-			return triggerReset.call(this, element)
+			return triggerReset.call(this, element);
 		}
 	}
 
@@ -934,7 +1020,7 @@
 		var styles = [
 			element.styles.inline.generated,
 			element.styles.opacity.computed,
-			element.styles.transform.generated.final
+			element.styles.transform.generated.final,
 		];
 		if (delayed) {
 			styles.push(element.styles.transition.generated.delayed);
@@ -942,7 +1028,14 @@
 			styles.push(element.styles.transition.generated.instant);
 		}
 		element.revealed = element.seen = true;
-		applyStyle(element.node, styles.filter(function (s) { return s !== ''; }).join(' '));
+		applyStyle(
+			element.node,
+			styles
+				.filter(function (s) {
+					return s !== '';
+				})
+				.join(' ')
+		);
 		registerCallbacks.call(this, element, delayed);
 	}
 
@@ -951,10 +1044,17 @@
 			element.styles.inline.generated,
 			element.styles.opacity.generated,
 			element.styles.transform.generated.initial,
-			element.styles.transition.generated.instant
+			element.styles.transition.generated.instant,
 		];
 		element.revealed = false;
-		applyStyle(element.node, styles.filter(function (s) { return s !== ''; }).join(' '));
+		applyStyle(
+			element.node,
+			styles
+				.filter(function (s) {
+					return s !== '';
+				})
+				.join(' ')
+		);
 		registerCallbacks.call(this, element);
 	}
 
@@ -986,21 +1086,25 @@
 			clock: window.setTimeout(function () {
 				afterCallback(element.node);
 				element.callbackTimer = null;
-				if (element.revealed && !element.config.reset && element.config.cleanup) {
+				if (
+					element.revealed &&
+					!element.config.reset &&
+					element.config.cleanup
+				) {
 					clean.call(this$1, element.node);
 				}
-			}, duration - elapsed)
+			}, duration - elapsed),
 		};
 	}
 
 	function sequence(element, pristine) {
-		if ( pristine === void 0 ) pristine = this.pristine;
+		if (pristine === void 0) pristine = this.pristine;
 
 		/**
 		 * We first check if the element should reset.
 		 */
 		if (!element.visible && element.revealed && element.config.reset) {
-			return animate.call(this, element, { reset: true })
+			return animate.call(this, element, { reset: true });
 		}
 
 		var seq = this.store.sequences[element.sequence.id];
@@ -1027,7 +1131,10 @@
 				if (nextElement) {
 					cue.call(this, seq, visible.body[0], -1, pristine);
 					cue.call(this, seq, visible.body[0], +1, pristine);
-					return animate.call(this, nextElement, { reveal: true, pristine: pristine })
+					return animate.call(this, nextElement, {
+						reveal: true,
+						pristine: pristine,
+					});
 				}
 			}
 
@@ -1038,20 +1145,26 @@
 			 */
 			if (
 				!seq.blocked.head &&
-				i === [].concat( revealed.head ).pop() &&
-				i >= [].concat( visible.body ).shift()
+				i === [].concat(revealed.head).pop() &&
+				i >= [].concat(visible.body).shift()
 			) {
 				cue.call(this, seq, i, -1, pristine);
-				return animate.call(this, element, { reveal: true, pristine: pristine })
+				return animate.call(this, element, {
+					reveal: true,
+					pristine: pristine,
+				});
 			}
 
 			if (
 				!seq.blocked.foot &&
-				i === [].concat( revealed.foot ).shift() &&
-				i <= [].concat( visible.body ).pop()
+				i === [].concat(revealed.foot).shift() &&
+				i <= [].concat(visible.body).pop()
 			) {
 				cue.call(this, seq, i, +1, pristine);
-				return animate.call(this, element, { reveal: true, pristine: pristine })
+				return animate.call(this, element, {
+					reveal: true,
+					pristine: pristine,
+				});
 			}
 		}
 	}
@@ -1065,10 +1178,10 @@
 			this.models = {};
 			this.blocked = {
 				head: false,
-				foot: false
+				foot: false,
 			};
 		} else {
-			throw new RangeError('Invalid sequence interval.')
+			throw new RangeError('Invalid sequence interval.');
 		}
 	}
 
@@ -1119,8 +1232,8 @@
 
 	function reveal(target, options, syncing) {
 		var this$1 = this;
-		if ( options === void 0 ) options = {};
-		if ( syncing === void 0 ) syncing = false;
+		if (options === void 0) options = {};
+		if (syncing === void 0) syncing = false;
 
 		var containerBuffer = [];
 		var sequence$$1;
@@ -1133,7 +1246,7 @@
 
 			var nodes = tealight(target);
 			if (!nodes.length) {
-				throw new Error('Invalid reveal target.')
+				throw new Error('Invalid reveal target.');
 			}
 
 			var elements = nodes.reduce(function (elementBuffer, elementNode) {
@@ -1159,19 +1272,22 @@
 
 				var config = deepAssign({}, element.config || this$1.defaults, options);
 
-				if ((!config.mobile && isMobile()) || (!config.desktop && !isMobile())) {
+				if (
+					(!config.mobile && isMobile()) ||
+					(!config.desktop && !isMobile())
+				) {
 					if (existingId) {
 						clean.call(this$1, element);
 					}
-					return elementBuffer // skip elements that are disabled
+					return elementBuffer; // skip elements that are disabled
 				}
 
 				var containerNode = tealight(config.container)[0];
 				if (!containerNode) {
-					throw new Error('Invalid container.')
+					throw new Error('Invalid container.');
 				}
 				if (!containerNode.contains(elementNode)) {
-					return elementBuffer // skip elements found outside the container
+					return elementBuffer; // skip elements found outside the container
 				}
 
 				var containerId;
@@ -1194,13 +1310,13 @@
 				if (sequence$$1) {
 					element.sequence = {
 						id: sequence$$1.id,
-						index: sequence$$1.members.length
+						index: sequence$$1.members.length,
 					};
 					sequence$$1.members.push(element.id);
 				}
 
 				elementBuffer.push(element);
-				return elementBuffer
+				return elementBuffer;
 			}, []);
 
 			/**
@@ -1213,7 +1329,7 @@
 				element.node.setAttribute('data-sr-id', element.id);
 			});
 		} catch (e) {
-			return logger.call(this, 'Reveal failed.', e.message)
+			return logger.call(this, 'Reveal failed.', e.message);
 		}
 
 		/**
@@ -1223,7 +1339,7 @@
 		each(containerBuffer, function (container) {
 			this$1.store.containers[container.id] = {
 				id: container.id,
-				node: container.node
+				node: container.node,
 			};
 		});
 		if (sequence$$1) {
@@ -1249,8 +1365,9 @@
 	}
 
 	function getContainerId(node) {
-		var collections = [], len = arguments.length - 1;
-		while ( len-- > 0 ) collections[ len ] = arguments[ len + 1 ];
+		var collections = [],
+			len = arguments.length - 1;
+		while (len-- > 0) collections[len] = arguments[len + 1];
 
 		var id = null;
 		each(collections, function (collection) {
@@ -1260,7 +1377,7 @@
 				}
 			});
 		});
-		return id
+		return id;
 	}
 
 	/**
@@ -1277,7 +1394,9 @@
 		initialize.call(this);
 	}
 
-	var polyfill = function (x) { return (x > 0) - (x < 0) || +x; };
+	var polyfill = function (x) {
+		return (x > 0) - (x < 0) || +x;
+	};
 	var mathSign = Math.sign || polyfill;
 
 	/*! @license miniraf v1.0.1
@@ -1312,12 +1431,15 @@
 				clock = currentTime;
 				callback(currentTime);
 			} else {
-				setTimeout(function () { return polyfill$1(callback); }, 0);
+				setTimeout(function () {
+					return polyfill$1(callback);
+				}, 0);
 			}
-		}
+		};
 	})();
 
-	var miniraf = window.requestAnimationFrame ||
+	var miniraf =
+		window.requestAnimationFrame ||
 		window.webkitRequestAnimationFrame ||
 		window.mozRequestAnimationFrame ||
 		polyfill$1;
@@ -1327,7 +1449,9 @@
 		 * We want to ignore padding and scrollbars for container elements.
 		 * More information here: https://goo.gl/vOZpbz
 		 */
-		var height = isContainer ? target.node.clientHeight : target.node.offsetHeight;
+		var height = isContainer
+			? target.node.clientHeight
+			: target.node.offsetHeight;
 		var width = isContainer ? target.node.clientWidth : target.node.offsetWidth;
 
 		var offsetTop = 0;
@@ -1342,18 +1466,18 @@
 				offsetLeft += node.offsetLeft;
 			}
 			node = node.offsetParent;
-		} while (node)
+		} while (node);
 
 		return {
 			bounds: {
 				top: offsetTop,
 				right: offsetLeft + width,
 				bottom: offsetTop + height,
-				left: offsetLeft
+				left: offsetLeft,
 			},
 			height: height,
-			width: width
-		}
+			width: width,
+		};
 	}
 
 	function getScrolled(container) {
@@ -1365,31 +1489,44 @@
 			top = container.node.scrollTop;
 			left = container.node.scrollLeft;
 		}
-		return { top: top, left: left }
+		return { top: top, left: left };
 	}
 
 	function isElementVisible(element) {
-		if ( element === void 0 ) element = {};
+		if (element === void 0) element = {};
 
 		var container = this.store.containers[element.containerId];
-		if (!container) { return }
+		if (!container) {
+			return;
+		}
 
 		var viewFactor = Math.max(0, Math.min(1, element.config.viewFactor));
 		var viewOffset = element.config.viewOffset;
 
 		var elementBounds = {
 			top: element.geometry.bounds.top + element.geometry.height * viewFactor,
-			right: element.geometry.bounds.right - element.geometry.width * viewFactor,
-			bottom: element.geometry.bounds.bottom - element.geometry.height * viewFactor,
-			left: element.geometry.bounds.left + element.geometry.width * viewFactor
+			right:
+				element.geometry.bounds.right - element.geometry.width * viewFactor,
+			bottom:
+				element.geometry.bounds.bottom - element.geometry.height * viewFactor,
+			left: element.geometry.bounds.left + element.geometry.width * viewFactor,
 		};
 
 		var containerBounds = {
-			top: container.geometry.bounds.top + container.scroll.top + viewOffset.top,
-			right: container.geometry.bounds.right + container.scroll.left - viewOffset.right,
+			top:
+				container.geometry.bounds.top + container.scroll.top + viewOffset.top,
+			right:
+				container.geometry.bounds.right +
+				container.scroll.left -
+				viewOffset.right,
 			bottom:
-				container.geometry.bounds.bottom + container.scroll.top - viewOffset.bottom,
-			left: container.geometry.bounds.left + container.scroll.left + viewOffset.left
+				container.geometry.bounds.bottom +
+				container.scroll.top -
+				viewOffset.bottom,
+			left:
+				container.geometry.bounds.left +
+				container.scroll.left +
+				viewOffset.left,
 		};
 
 		return (
@@ -1398,16 +1535,13 @@
 				elementBounds.bottom > containerBounds.top &&
 				elementBounds.left < containerBounds.right) ||
 			element.styles.position === 'fixed'
-		)
+		);
 	}
 
-	function delegate(
-		event,
-		elements
-	) {
+	function delegate(event, elements) {
 		var this$1 = this;
-		if ( event === void 0 ) event = { type: 'init' };
-		if ( elements === void 0 ) elements = this.store.elements;
+		if (event === void 0) event = { type: 'init' };
+		if (elements === void 0) elements = this.store.elements;
 
 		miniraf(function () {
 			var stale = event.type === 'init' || event.type === 'resize';
@@ -1420,7 +1554,7 @@
 				if (container.scroll) {
 					container.direction = {
 						x: mathSign(scroll.left - container.scroll.left),
-						y: mathSign(scroll.top - container.scroll.top)
+						y: mathSign(scroll.top - container.scroll.top),
 					};
 				}
 				container.scroll = scroll;
@@ -1453,15 +1587,15 @@
 
 	function isTransformSupported() {
 		var style = document.documentElement.style;
-		return 'transform' in style || 'WebkitTransform' in style
+		return 'transform' in style || 'WebkitTransform' in style;
 	}
 
 	function isTransitionSupported() {
 		var style = document.documentElement.style;
-		return 'transition' in style || 'WebkitTransition' in style
+		return 'transition' in style || 'WebkitTransition' in style;
 	}
 
-	var version = "4.0.9";
+	var version = '4.0.9';
 
 	var boundDelegate;
 	var boundDestroy;
@@ -1473,19 +1607,23 @@
 	var instance;
 
 	function ScrollReveal(options) {
-		if ( options === void 0 ) options = {};
+		if (options === void 0) options = {};
 
 		var invokedWithoutNew =
 			typeof this === 'undefined' ||
 			Object.getPrototypeOf(this) !== ScrollReveal.prototype;
 
 		if (invokedWithoutNew) {
-			return new ScrollReveal(options)
+			return new ScrollReveal(options);
 		}
 
 		if (!ScrollReveal.isSupported()) {
-			logger.call(this, 'Instantiation failed.', 'This browser is not supported.');
-			return mount.failure()
+			logger.call(
+				this,
+				'Instantiation failed.',
+				'This browser is not supported.'
+			);
+			return mount.failure();
 		}
 
 		var buffer;
@@ -1495,17 +1633,17 @@
 				: deepAssign({}, defaults, options);
 		} catch (e) {
 			logger.call(this, 'Invalid configuration.', e.message);
-			return mount.failure()
+			return mount.failure();
 		}
 
 		try {
 			var container = tealight(buffer.container)[0];
 			if (!container) {
-				throw new Error('Invalid container.')
+				throw new Error('Invalid container.');
 			}
 		} catch (e) {
 			logger.call(this, e.message);
-			return mount.failure()
+			return mount.failure();
 		}
 
 		config = buffer;
@@ -1514,10 +1652,10 @@
 			logger.call(
 				this,
 				'This device is disabled.',
-				("desktop: " + (config.desktop)),
-				("mobile: " + (config.mobile))
+				'desktop: ' + config.desktop,
+				'mobile: ' + config.mobile
 			);
-			return mount.failure()
+			return mount.failure();
 		}
 
 		mount.success();
@@ -1526,7 +1664,7 @@
 			containers: {},
 			elements: {},
 			history: [],
-			sequences: {}
+			sequences: {},
 		};
 
 		this.pristine = true;
@@ -1537,28 +1675,65 @@
 		boundClean = boundClean || clean.bind(this);
 		boundSync = boundSync || sync.bind(this);
 
-		Object.defineProperty(this, 'delegate', { get: function () { return boundDelegate; } });
-		Object.defineProperty(this, 'destroy', { get: function () { return boundDestroy; } });
-		Object.defineProperty(this, 'reveal', { get: function () { return boundReveal; } });
-		Object.defineProperty(this, 'clean', { get: function () { return boundClean; } });
-		Object.defineProperty(this, 'sync', { get: function () { return boundSync; } });
+		Object.defineProperty(this, 'delegate', {
+			get: function () {
+				return boundDelegate;
+			},
+		});
+		Object.defineProperty(this, 'destroy', {
+			get: function () {
+				return boundDestroy;
+			},
+		});
+		Object.defineProperty(this, 'reveal', {
+			get: function () {
+				return boundReveal;
+			},
+		});
+		Object.defineProperty(this, 'clean', {
+			get: function () {
+				return boundClean;
+			},
+		});
+		Object.defineProperty(this, 'sync', {
+			get: function () {
+				return boundSync;
+			},
+		});
 
-		Object.defineProperty(this, 'defaults', { get: function () { return config; } });
-		Object.defineProperty(this, 'version', { get: function () { return version; } });
-		Object.defineProperty(this, 'noop', { get: function () { return false; } });
+		Object.defineProperty(this, 'defaults', {
+			get: function () {
+				return config;
+			},
+		});
+		Object.defineProperty(this, 'version', {
+			get: function () {
+				return version;
+			},
+		});
+		Object.defineProperty(this, 'noop', {
+			get: function () {
+				return false;
+			},
+		});
 
-		return instance ? instance : (instance = this)
+		return instance ? instance : (instance = this);
 	}
 
-	ScrollReveal.isSupported = function () { return isTransformSupported() && isTransitionSupported(); };
+	ScrollReveal.isSupported = function () {
+		return isTransformSupported() && isTransitionSupported();
+	};
 
 	Object.defineProperty(ScrollReveal, 'debug', {
-		get: function () { return debug || false; },
-		set: function (value) { return (debug = typeof value === 'boolean' ? value : debug); }
+		get: function () {
+			return debug || false;
+		},
+		set: function (value) {
+			return (debug = typeof value === 'boolean' ? value : debug);
+		},
 	});
 
 	ScrollReveal();
 
 	return ScrollReveal;
-
-}));
+});

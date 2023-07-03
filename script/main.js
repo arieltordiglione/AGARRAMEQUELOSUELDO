@@ -79,3 +79,19 @@ window.addEventListener('scroll', function () {
 /* FECHA COPYRIGTH FOOTER */
 let fecha = document.getElementById('fecha');
 fecha.innerHTML = new Date().getFullYear();
+
+/* SCROLLREVEAL */
+let sr = ScrollReveal().reveal;
+sr('.navbar', {
+	delay: 100,
+	duration: 1000,
+	origin: 'bottom',
+	distance: '-100px',
+});
+
+sr('.portada__titulo', {
+	delay: 500,
+	duration: 1500,
+	origin: 'left',
+	distance: '400px',
+});
