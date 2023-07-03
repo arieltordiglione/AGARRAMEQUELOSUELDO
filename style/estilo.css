@@ -271,8 +271,8 @@ header a {
 
 /* BOTONES FLOTANTES */
 .botones__flotantes {
-	bottom: 30px;
-	right: 30px;
+	bottom: 5px;
+	right: 10px;
 	display: flex;
 	flex-direction: row;
 	position: fixed;
