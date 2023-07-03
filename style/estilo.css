@@ -168,6 +168,7 @@ header a {
 .nav-ul li:hover a,
 .nav-ul li.active a {
 	transform: skew(30deg);
+	font-weight: 600;
 }
 
 /* mover boton hacia arriba y aparece nuevo desde abajo */
