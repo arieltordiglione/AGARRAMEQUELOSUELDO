@@ -119,6 +119,7 @@ header a {
 
 .logo {
 	height: 100%;
+	/* flex: 30%; */
 	display: flex;
 	align-items: center;
 	padding-left: 5px;
@@ -134,6 +135,7 @@ header a {
 
 .nav-ul {
 	display: flex;
+	/* flex: 70%; */
 	margin: 0;
 	padding-left: 20px;
 	list-style: none;
@@ -245,20 +247,26 @@ header a {
 #portada {
 	width: 100%;
 	height: 100vh;
-
 	position: relative;
 }
+
 .portada__titulo {
 	position: absolute;
+	user-select: none;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	width: 100%;
+	height: 100vh;
 }
 
 .portada__titulo h1 {
-	font-size: 8em;
+	font-size: 10vw;
 	color: #fff;
 }
 
 .portada__titulo h3 {
-	font-size: 2em;
+	font-size: 4vw;
 	color: #fff;
 }
 
@@ -298,6 +306,7 @@ header a {
 	z-index: 1;
 	animation: pulse 2s infinite ease-in-out alternate;
 	transition: 0.3s;
+	cursor: pointer;
 }
 
 .btn-wsp:hover {
@@ -339,6 +348,11 @@ header a {
 	display: none;
 }
 
+.botones__flotantes a,
+.botones__flotantes i {
+	cursor: pointer;
+}
+
 /**Footer**/
 
 footer {
@@ -355,7 +369,7 @@ footer {
 
 /*MEDIA QUERIES- RESPONSIVE*/
 
-@media (max-width: 800px) {
+@media (max-width: 970px) {
 	/* NAVBAR */
 	.hamburger {
 		display: flex;

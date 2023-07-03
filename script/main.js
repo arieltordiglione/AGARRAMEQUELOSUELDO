@@ -81,17 +81,18 @@ let fecha = document.getElementById('fecha');
 fecha.innerHTML = new Date().getFullYear();
 
 /* SCROLLREVEAL */
-let sr = ScrollReveal().reveal;
-sr('.navbar', {
+window.sr = ScrollReveal();
+sr.reveal('.navbar', {
 	delay: 100,
 	duration: 1000,
-	origin: 'bottom',
-	distance: '-100px',
+	origin: 'top' /* interfiere con el menu responsive */,
+	/* distance: '100px', */
 });
 
-sr('.portada__titulo', {
+sr.reveal('.portada__titulo', {
 	delay: 500,
 	duration: 1500,
 	origin: 'left',
 	distance: '400px',
+	reset: true,
 });
