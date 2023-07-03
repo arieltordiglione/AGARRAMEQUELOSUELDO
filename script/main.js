@@ -85,8 +85,10 @@ window.sr = ScrollReveal();
 sr.reveal('.navbar', {
 	delay: 100,
 	duration: 1000,
-	origin: 'top' /* interfiere con el menu responsive */,
-	/* distance: '100px', */
+	origin: 'top',
+	/* mobile: false,
+	distance: '100px' */
+	/* interfiere con el menu responsive */
 });
 
 sr.reveal('.portada__titulo', {
