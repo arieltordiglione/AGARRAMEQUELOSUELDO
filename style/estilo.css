@@ -11,13 +11,16 @@
 	--colorfont2: #5f5f5f;
 }
 
+html {
+	scroll-behavior: smooth;
+	color: var(--colorfont1);
+}
+
 * {
 	font-family: 'Montserrat', 'Carme', 'sans-serif';
 	font-weight: 400;
-	color: var(--colorfont1);
 	box-sizing: border-box;
 	cursor: url(../assets/icons/welding.svg), pointer;
-	scroll-behavior: smooth;
 	/* border: 1px solid white; */
 }
 
@@ -266,17 +269,26 @@ header a {
 	height: 100%;
 }
 
+/* BOTONES FLOTANTES */
+.botones__flotantes {
+	bottom: 30px;
+	right: 30px;
+	display: flex;
+	flex-direction: row;
+	position: fixed;
+	width: 140px;
+	height: 140px;
+	align-items: center;
+	justify-content: space-around;
+}
+
 /* BOTON WHATSAPP FLOTANTE */
 
 .btn-wsp {
 	display: none;
-	position: fixed;
 	width: 55px;
 	height: 55px;
 	line-height: 55px;
-	bottom: 110px;
-	right: 30px;
-
 	background-image: linear-gradient(#0df053, #1daf4b);
 	color: #fff;
 	border-radius: 50px;
@@ -298,12 +310,9 @@ header a {
 /* BOTON ARRIBA- UP */
 .btn-up {
 	display: none;
-	position: fixed;
 	width: 55px;
 	height: 55px;
 	line-height: 55px;
-	bottom: 30px;
-	right: 30px;
 	background-image: linear-gradient(var(--color1), var(--color2));
 	color: #fff;
 	border-radius: 50px;
