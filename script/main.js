@@ -98,3 +98,11 @@ sr.reveal('.portada__titulo', {
 	distance: '400px',
 	reset: true,
 });
+
+sr.reveal('.botones__flotantes', {
+	delay: 2000,
+	duration: 1500,
+	origin: 'bottom',
+	distance: '400px',
+	reset: true,
+});
