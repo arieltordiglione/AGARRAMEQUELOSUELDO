@@ -154,9 +154,9 @@ header a {
 .nav-ul li a {
 	display: flex;
 	align-items: center;
-	justify-content: center;
+
 	height: 56px; /*En lugar de 60px debido a los 4px de la progressBar*/
-	width: 120px;
+	/* width: 120px; */
 }
 
 .nav-ul li:hover,
