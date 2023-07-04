@@ -267,11 +267,14 @@ header a {
 .portada__titulo h1 {
 	font-size: 10vw;
 	color: #fff;
+	margin: 0px;
 }
 
 .portada__titulo h3 {
 	font-size: 4vw;
 	color: #fff;
+	padding: 0 10px;
+	margin: 0px;
 }
 
 .portada__video {
@@ -284,7 +287,7 @@ header a {
 /* BOTONES FLOTANTES */
 .botones__flotantes {
 	bottom: 5px;
-	right: 10px;
+	right: 20px;
 	display: flex;
 	flex-direction: row;
 	position: fixed;
@@ -309,7 +312,7 @@ header a {
 	font-size: 30px;
 	box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.9);
 	z-index: 1;
-	animation: pulse 2s infinite ease-in-out alternate;
+	animation: /* pulse */ floating 2s infinite ease-in-out alternate;
 	transition: 0.3s;
 	cursor: pointer;
 }
@@ -335,7 +338,7 @@ header a {
 	box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.9);
 	z-index: 1;
 	transition: 0.3s;
-	animation: floating 9s infinite ease-in-out alternate;
+	animation: floating 2s infinite ease-in-out alternate;
 }
 
 .btn-up:hover {
