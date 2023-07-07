@@ -158,6 +158,8 @@ header a {
 
 .logo a {
 	transition: color 0.5s;
+	font-weight: 600;
+	letter-spacing: normal;
 }
 
 .logo a:hover {
