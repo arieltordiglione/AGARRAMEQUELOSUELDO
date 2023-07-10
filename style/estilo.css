@@ -477,10 +477,25 @@ header a {
 .instagram__container {
 	width: 100%;
 	padding: 60px 10px;
+	z-index: 1;
 }
 
 .instagram__container p {
 	text-align: center;
+}
+
+/* CONTACTO */
+#contacto {
+	padding-top: 60px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.mapa {
+	width: 98%;
+	height: 45vw;
+	align-items: center;
 }
 
 /* BOTON WHATSAPP FLOTANTE */
