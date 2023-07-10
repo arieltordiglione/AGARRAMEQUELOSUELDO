@@ -492,6 +492,48 @@ header a {
 	align-items: center;
 }
 
+/* FORMULARIO DE CONTACTO */
+.inputGroup {
+	margin: 1em 0 1em 0;
+	max-width: 190px;
+	position: relative;
+}
+
+form .inputGroup input {
+	font-size: 100%;
+	padding: 0.8em;
+	outline: none;
+	border: 2px solid var(--colorfont1);
+	background-color: transparent;
+	width: 100%;
+	color: var(--colorfont1);
+	transform: skew(-30deg);
+}
+
+form .inputGroup label {
+	font-size: 100%;
+	position: absolute;
+	left: 0;
+	padding: 0.8em;
+	margin-left: 0.5em;
+	pointer-events: none;
+	transition: all 0.3s ease;
+}
+
+.inputGroup :is(input:focus, input:valid) ~ label {
+	transform: skew(-30deg);
+	transform: translateY(-50%) scale(0.9);
+	margin: 0em;
+	margin-left: 1.3em;
+	padding: 0.4em;
+	background-image: linear-gradient(var(--color1), var(--color2));
+	color: #000;
+}
+
+.inputGroup :is(input:focus, input:valid) {
+	border-color: var(--color2);
+}
+
 .mapa {
 	width: 98%;
 	height: 45vw;
