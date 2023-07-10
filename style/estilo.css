@@ -20,7 +20,7 @@ html {
 	font-family: 'Montserrat', 'Carme', 'sans-serif';
 	font-weight: 400;
 	box-sizing: border-box;
-	cursor: url(../assets/icons/welding.svg), pointer;
+	cursor: url(../assets/icons/welding.svg), auto;
 	/* border: 1px solid white; */
 }
 
@@ -323,6 +323,11 @@ header a {
 }
 
 /* NOSOTROS */
+
+#nosotros {
+	padding-top: 60px;
+}
+
 .nosotros__container {
 	/* VERRRRRRRRRRRRRRRRRRRRRRRR */
 	display: grid;
@@ -349,6 +354,54 @@ header a {
 	align-items: center;
 	justify-content: space-around;
 	z-index: 9999;
+}
+
+/* SERVICIOS */
+#servicios {
+	padding-top: 60px;
+}
+
+.servicios__container {
+	width: 100%;
+	background-image: url(../assets/img/bgOrange.svg);
+	background-attachment: fixed;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 50px 20px;
+}
+
+.servicios__detalle {
+	width: 100%;
+	background-color: var(--colorbg1);
+	padding: 20px;
+	display: flex;
+	flex-direction: column;
+	cursor: pointer;
+	transition: 1s ease;
+}
+
+.servicios__detalle summary {
+	cursor: pointer;
+	transition: 1s;
+}
+
+.servicios__detalle details {
+	align-items: center;
+	text-align: justify;
+	padding: 20px;
+	margin: 5px 0px;
+	background-color: var(--colorbg2);
+	box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.3);
+	transition: 1s;
+}
+
+.servicios__descripcion {
+	width: 100%;
+	background-color: var(--colorbg1);
+	padding: 20px;
+	text-align: justify;
+	padding-inline-start: 0px;
 }
 
 /* BOTON WHATSAPP FLOTANTE */
