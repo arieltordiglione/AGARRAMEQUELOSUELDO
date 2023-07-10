@@ -64,13 +64,13 @@ h2,
 h3,
 h4,
 h5,
-h6,
-p {
-	padding: 10px;
-	margin: 0px;
+h6 {
+	text-align: center;
 }
 
 p {
+	padding: 10px;
+	margin: 0px;
 	text-align: justify;
 }
 
@@ -112,6 +112,7 @@ header {
 	transition: box-shadow 1s;
 	font-size: 2.1vw;
 	z-index: 999999999999999;
+	cursor: pointer;
 }
 
 .shadowHeader {
@@ -122,6 +123,7 @@ header a {
 	text-decoration: none;
 	color: #fff;
 	width: 100%;
+	cursor: pointer;
 }
 
 .progressBar-container {
@@ -163,6 +165,7 @@ header a {
 	align-items: center;
 	justify-content: center;
 	text-align: center;
+	cursor: pointer;
 }
 
 .logo img {
@@ -183,10 +186,12 @@ header a {
 	height: 56px;
 	position: relative;
 	overflow: hidden;
+	cursor: pointer;
 }
 
 .nav-ul li {
 	padding: 0 5px;
+	cursor: pointer;
 }
 
 .nav-ul li a {
@@ -404,6 +409,80 @@ header a {
 	padding-inline-start: 0px;
 }
 
+/* GALERIA */
+#galeria {
+	padding-top: 60px;
+}
+
+/* SLIDER CARROUSEL */
+.wrapper {
+	display: flex;
+	max-width: 1200px;
+	position: relative;
+}
+.wrapper i {
+	top: 50%;
+	height: 44px;
+	width: 44px;
+	color: #343f4f;
+	cursor: pointer;
+	font-size: 1.15rem;
+	position: absolute;
+	text-align: center;
+	line-height: 44px;
+	background: #fff;
+	border-radius: 50%;
+	transform: translateY(-50%);
+	transition: transform 0.1s linear;
+}
+.wrapper i:active {
+	transform: translateY(-50%) scale(0.9);
+}
+.wrapper i:hover {
+	background: #f2f2f2;
+}
+.wrapper i:first-child {
+	left: 0px;
+	display: none;
+}
+.wrapper i:last-child {
+	right: 0px;
+}
+.wrapper .carousel {
+	font-size: 0px;
+	cursor: grab;
+	overflow: hidden;
+	white-space: nowrap;
+	scroll-behavior: smooth;
+}
+.carousel.dragging {
+	cursor: grab;
+	scroll-behavior: auto;
+}
+
+.carousel img {
+	height: 340px;
+	object-fit: cover;
+	user-select: none;
+	margin-left: 14px;
+	width: calc(100% / 3);
+	cursor: grab;
+}
+.carousel img:first-child {
+	margin-left: 0px;
+}
+
+/* INSTAGRAM */
+
+.instagram__container {
+	width: 100%;
+	padding: 60px 10px;
+}
+
+.instagram__container p {
+	text-align: center;
+}
+
 /* BOTON WHATSAPP FLOTANTE */
 
 .btn-wsp {
@@ -549,11 +628,23 @@ footer {
 		left: 0;
 		top: 0;
 	}
+
+	/* GALERIA */
+	/* SLIDER CARROUSEL */
+	.carousel img {
+		width: calc(100% / 2);
+	}
 }
 
 @media (max-width: 385px) {
 	/* NAVBAR */
 	header {
 		font-size: 0.9em;
+	}
+
+	/* GALERIA */
+	/* SLIDER CARROUSEL */
+	.carousel img {
+		width: 100%;
 	}
 }
