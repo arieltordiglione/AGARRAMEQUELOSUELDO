@@ -4,11 +4,8 @@ clip-path: polygon(25% 0%, 100% 0, 73% 100%, 0% 100%);
 
  
 
-
-
 transition details
 https://css-tricks.com/how-to-animate-the-details-element/
-
 
 
 
@@ -18,9 +15,7 @@ https://www.youtube.com/watch?v=bs6WPzeCF7I&ab_channel=HolasoyEdu
 
 
 
-A cada seccion darle un margin o padding top del tamaño de la navbar
-
-
+ 
 
 
 

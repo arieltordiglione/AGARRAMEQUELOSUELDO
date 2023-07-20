@@ -487,15 +487,31 @@ header a {
 /* CONTACTO */
 #contacto {
 	padding-top: 60px;
+}
+
+.contacto__container {
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	align-items: center;
+	justify-content: space-around;
+}
+
+.datos {
+	/* 	display: flex;
+	flex-direction: column;
+	align-items: center; */
+	text-align: justify;
 }
 
 /* FORMULARIO DE CONTACTO */
+form {
+	display: grid;
+	place-items: center;
+}
+
 .inputGroup {
-	margin: 1em 0 1em 0;
-	max-width: 190px;
+	margin: 1em 2em;
+	width: 40vw;
 	position: relative;
 }
 
@@ -534,10 +550,26 @@ form .inputGroup label {
 	border-color: var(--color2);
 }
 
+/* botón de formulario de contacto */
+.boton-form {
+	font-size: 1em;
+	padding: 0.8em;
+	outline: none;
+	border: 2px solid #000;
+	background-image: linear-gradient(var(--color1), var(--color2));
+	width: 20vw;
+	color: #000;
+	font-weight: 600;
+	transform: skew(-30deg);
+	text-transform: uppercase;
+}
+
+/* MAPA */
+
 .mapa {
-	width: 98%;
+	margin: 60px 0px 60px 0px;
+	width: 100%;
 	height: 450px;
-	align-items: center;
 }
 
 /* BOTON WHATSAPP FLOTANTE */
@@ -691,6 +723,22 @@ footer {
 	.carousel img {
 		width: calc(100% / 2);
 	}
+
+	/* CONTACTO */
+	.contacto__container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-around;
+	}
+
+	form {
+		margin-top: 1.5em;
+	}
+
+	.inputGroup {
+		width: 60vw;
+	}
 }
 
 @media (max-width: 385px) {
@@ -703,5 +751,11 @@ footer {
 	/* SLIDER CARROUSEL */
 	.carousel img {
 		width: 100%;
+	}
+
+	/* CONTACTO */
+	/* FORMULARIO */
+	.inputGroup {
+		width: 90vw;
 	}
 }
