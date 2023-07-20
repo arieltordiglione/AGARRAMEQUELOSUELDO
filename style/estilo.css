@@ -517,6 +517,7 @@ form {
 
 form .inputGroup input {
 	font-size: 100%;
+	font-weight: 600;
 	padding: 0.8em;
 	outline: none;
 	border: 2px solid var(--colorfont1);
@@ -528,6 +529,7 @@ form .inputGroup input {
 
 form .inputGroup label {
 	font-size: 100%;
+	font-weight: 600;
 	position: absolute;
 	left: 0;
 	padding: 0.8em;
@@ -552,7 +554,6 @@ form .inputGroup label {
 
 /* botón de formulario de contacto */
 .boton-form {
-	font-size: 1em;
 	padding: 0.8em;
 	outline: none;
 	border: 2px solid #000;
