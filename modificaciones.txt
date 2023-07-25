@@ -101,24 +101,7 @@ https://www.svgrepo.com/
 
 
 
-/* PUNTERO MOUSE POINTER CURSOR */
-/* #pointer__container {
-	position: relative;
-	width: 100%;
-	height: 360px;
-}
-#pointer {
-	position: absolute;
-	width: 80px;
-	height: 80px;
-	cursor: none;
-	//pointer-events: none;  Evita que el puntero afecte a los elementos debajo 
-	background-image: url(../icons/welding.svg);
-	background-size: cover;
-	clip-path: inset(0);
-} */
-
-
+ 
 
 
 
