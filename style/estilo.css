@@ -563,6 +563,14 @@ form .inputGroup label {
 	font-weight: 600;
 	transform: skew(-30deg);
 	text-transform: uppercase;
+	cursor: pointer;
+}
+
+.boton-form:hover {
+	border-color: var(--color2);
+	color: var(--color2);
+	background-image: none;
+	background-color: var(--colorbg1);
 }
 
 /* MAPA */
