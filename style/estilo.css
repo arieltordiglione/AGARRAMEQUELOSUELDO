@@ -554,16 +554,20 @@ form .inputGroup label {
 
 /* botón de formulario de contacto */
 .boton-form {
+	width: 20vw;
+	min-width: 100px;
 	padding: 0.8em;
+	position: relative;
 	outline: none;
 	border: 2px solid #000;
 	background-image: linear-gradient(var(--color1), var(--color2));
-	width: 20vw;
 	color: #000;
 	font-weight: 600;
 	transform: skew(-30deg);
 	text-transform: uppercase;
 	cursor: pointer;
+	overflow: hidden;
+	transition: all 0.5s ease-in-out;
 }
 
 .boton-form:hover {
@@ -571,6 +575,31 @@ form .inputGroup label {
 	color: var(--color2);
 	background-image: none;
 	background-color: var(--colorbg1);
+}
+
+.type1::after {
+	content: 'ENVIAR';
+	height: 40px;
+	width: 20vw;
+	background-color: var(--colorbg1);
+	color: var(--color2);
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	transform: translateY(50px);
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.5s ease-in-out;
+}
+
+.type1:hover::after {
+	transform: translateY(0) scale(1.2);
+}
+
+.type1:hover::before {
+	transform: translateY(-50px) scale(0) rotate(120deg);
 }
 
 /* MAPA */
@@ -764,7 +793,11 @@ footer {
 
 	/* CONTACTO */
 	/* FORMULARIO */
+
+	form {
+		margin: 0 20px;
+	}
 	.inputGroup {
-		width: 90vw;
+		width: 85vw;
 	}
 }
