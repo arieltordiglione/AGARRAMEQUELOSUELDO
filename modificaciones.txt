@@ -3,6 +3,8 @@ ver svg
 ver en datos contacto
 
 
+ver navbar que se actualice al navegar
+
 
 
 

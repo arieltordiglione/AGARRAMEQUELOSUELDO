@@ -412,12 +412,17 @@ header a {
 /* GALERIA */
 #galeria {
 	padding-top: 60px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
 /* SLIDER CARROUSEL */
 .wrapper {
 	display: flex;
-	max-width: 1200px;
+	width: 98%;
+	/* 	max-width: 1200px; */
 	position: relative;
 }
 .wrapper i {
@@ -461,11 +466,13 @@ header a {
 }
 
 .carousel img {
-	height: 340px;
+	height: 340px; /* VERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR */ /* VERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR */
 	object-fit: cover;
 	user-select: none;
 	margin-left: 14px;
-	width: calc(100% / 3);
+	width: calc(
+		100% / 3
+	); /* VERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR */ /* VERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR */
 	cursor: grab;
 }
 .carousel img:first-child {

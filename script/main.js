@@ -193,7 +193,7 @@ sr.reveal('.servicios__detalle details', {
 	delay: 100,
 	duration: 1000,
 	origin: 'top',
-	distance: '200px',
+	distance: '100px',
 	reset: true,
 	interval: 100,
 });
@@ -202,9 +202,16 @@ sr.reveal('.servicios__descripcion ul li', {
 	delay: 100,
 	duration: 1000,
 	origin: 'bottom',
-	distance: '200px',
+	distance: '100px',
 	reset: true,
 	interval: 100,
+});
+
+sr.reveal('.wrapper', {
+	delay: 100,
+	duration: 1500,
+	distance: '100px',
+	reset: true,
 });
 
 sr.reveal('.contacto__container', {
