@@ -173,6 +173,48 @@ sr.reveal('.portada__titulo', {
 	reset: true,
 });
 
+sr.reveal('.nosotros__texto', {
+	delay: 300,
+	duration: 1000,
+	origin: 'left',
+	distance: '400px',
+	reset: true,
+});
+
+sr.reveal('.nosotros__img', {
+	delay: 300,
+	duration: 1000,
+	origin: 'right',
+	distance: '400px',
+	reset: true,
+});
+
+sr.reveal('.servicios__detalle details', {
+	delay: 100,
+	duration: 1000,
+	origin: 'top',
+	distance: '200px',
+	reset: true,
+	interval: 100,
+});
+
+sr.reveal('.servicios__descripcion ul li', {
+	delay: 100,
+	duration: 1000,
+	origin: 'bottom',
+	distance: '200px',
+	reset: true,
+	interval: 100,
+});
+
+sr.reveal('.contacto__container', {
+	delay: 100,
+	duration: 1500,
+	origin: 'bottom',
+	distance: '100px',
+	reset: true,
+});
+
 sr.reveal('.botones__flotantes', {
 	delay: 2000,
 	duration: 1500,

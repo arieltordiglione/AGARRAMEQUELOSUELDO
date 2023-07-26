@@ -1,3 +1,23 @@
+agregar iconos
+ver svg
+ver en datos contacto
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 en vez de usar skew usar esto=
 -webkit-clip-path: polygon(25% 0%, 100% 0, 73% 100%, 0% 100%);
 clip-path: polygon(25% 0%, 100% 0, 73% 100%, 0% 100%);
