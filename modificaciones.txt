@@ -70,12 +70,7 @@ EFECTO CHISPAS Y SOLDADURA
 https://codepen.io/citizen55/pen/jQxezO USAR ESTE! EFECTO SOLDADURA
 
 
-https://codepen.io/createjs/pen/zPWEoO
-
-https://codepen.io/waisbren89/pen/rjmVpK
-
-https://codepen.io/rukouen/pen/ddWoyg
-
+ 
 
 
 "moladora con chispas"

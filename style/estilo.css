@@ -530,6 +530,7 @@ header a {
 	position: relative;
 	width: 100%;
 	height: 100%;
+	top: -120px;
 }
 
 #canvas {
@@ -542,8 +543,8 @@ header a {
 button {
 	margin: 10px;
 	padding: 5px;
-	background-color: green;
-	color: white;
+	background-color: var(--color2);
+	color: #000;
 	cursor: pointer;
 }
 label {
@@ -553,6 +554,7 @@ label {
 #btncontainer {
 	position: absolute;
 	z-index: 2;
+	bottom: -150px;
 }
 
 /* CONTACTO */
