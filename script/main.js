@@ -214,14 +214,6 @@ sr.reveal('.wrapper', {
 	reset: true,
 });
 
-sr.reveal('#contacto', {
-	delay: 100,
-	duration: 1500,
-	origin: 'bottom',
-	distance: '100px',
-	reset: true,
-});
-
 sr.reveal('.botones__flotantes', {
 	delay: 2000,
 	duration: 1500,

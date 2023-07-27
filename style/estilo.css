@@ -491,6 +491,70 @@ header a {
 	text-align: center;
 }
 
+/* JUEGO */
+
+/* BOTON JUEGO */
+.juego {
+	display: grid;
+	place-items: center;
+}
+
+.juego a {
+	margin: 1em;
+	padding: 0.8em 0.5em;
+	position: relative;
+	outline: none;
+	border: 2px solid #000;
+	background-image: linear-gradient(var(--color1), var(--color2));
+	color: #000;
+	font-weight: 600;
+	transform: skew(-30deg);
+	text-transform: uppercase;
+	text-decoration: none;
+	text-align: center;
+	font-size: 2em;
+	cursor: pointer;
+	overflow: hidden;
+	transition: all 0.1s ease-in-out;
+}
+
+.juego a:hover {
+	border-color: var(--color2);
+	color: var(--color2);
+	background-image: none;
+	background-color: var(--colorbg1);
+}
+
+/* JUEGO */
+#container {
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+#canvas {
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 1;
+}
+button {
+	margin: 10px;
+	padding: 5px;
+	background-color: green;
+	color: white;
+	cursor: pointer;
+}
+label {
+	color: white;
+}
+
+#btncontainer {
+	position: absolute;
+	z-index: 2;
+}
+
 /* CONTACTO */
 #contacto {
 	padding-top: 60px;
@@ -674,10 +738,10 @@ form .inputGroup label {
 	cursor: pointer;
 }
 
-/**Footer**/
+/**FOOTER**/
 
 footer {
-	height: 200px;
+	width: 100%;
 	color: var(--colorfont2);
 	background-color: var(--colorbg2);
 	box-shadow: 0px -3px 3px 0 var(--color2);
@@ -777,6 +841,12 @@ footer {
 
 	.inputGroup {
 		width: 60vw;
+	}
+}
+
+@media (max-width: 750px) {
+	.juego {
+		display: none;
 	}
 }
 
