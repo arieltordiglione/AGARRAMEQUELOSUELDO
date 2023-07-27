@@ -494,13 +494,13 @@ header a {
 /* JUEGO */
 
 /* BOTON JUEGO */
-.juego {
+.juego__soldadura {
 	display: grid;
 	place-items: center;
 }
 
-.juego a {
-	margin: 1em;
+.juego__soldadura a {
+	margin: 1.1em;
 	padding: 0.8em 0.5em;
 	position: relative;
 	outline: none;
@@ -518,7 +518,7 @@ header a {
 	transition: all 0.1s ease-in-out;
 }
 
-.juego a:hover {
+.juego__soldadura a:hover {
 	border-color: var(--color2);
 	color: var(--color2);
 	background-image: none;
@@ -540,21 +540,35 @@ header a {
 	top: 0;
 	z-index: 1;
 }
-button {
-	margin: 10px;
-	padding: 5px;
-	background-color: var(--color2);
-	color: #000;
-	cursor: pointer;
-}
-label {
-	color: white;
-}
 
 #btncontainer {
 	position: absolute;
 	z-index: 2;
 	bottom: -150px;
+}
+
+#btncontainer button {
+	width: 100px;
+	padding: 0.8em;
+	margin: 5px 10px;
+	position: relative;
+	outline: none;
+	border: 2px solid #000;
+	background-image: linear-gradient(var(--color1), var(--color2));
+	color: #000;
+	font-weight: 600;
+	transform: skew(-30deg);
+	text-transform: uppercase;
+	cursor: pointer;
+	overflow: hidden;
+	transition: all 0.5s ease-in-out;
+}
+
+#btncontainer button:hover {
+	border-color: var(--color2);
+	color: var(--color2);
+	background-image: none;
+	background-color: var(--colorbg1);
 }
 
 /* CONTACTO */
@@ -847,7 +861,7 @@ footer {
 }
 
 @media (max-width: 750px) {
-	.juego {
+	.juego__soldadura {
 		display: none;
 	}
 }

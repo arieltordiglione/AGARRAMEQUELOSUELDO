@@ -23,11 +23,15 @@ function run() {
 
 	let btnClear = document.getElementById('clear');
 	let btnAgain = document.getElementById('again');
+	let btnStop = document.getElementById('stop');
 	btnClear.addEventListener('click', () => {
 		aw.clearScreen();
 	});
 	btnAgain.addEventListener('click', () => {
 		aw.againDraw();
+	});
+	btnStop.addEventListener('click', () => {
+		aw.stop();
 	});
 }
 
@@ -100,7 +104,7 @@ class ArcWelding {
 	}
 
 	stop() {
-		this.playAnimation = false;
+		this.writeWord() = false;
 		this.clearScreen();
 	}
 
