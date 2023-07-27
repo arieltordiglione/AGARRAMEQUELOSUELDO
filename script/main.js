@@ -214,15 +214,7 @@ sr.reveal('.wrapper', {
 	reset: true,
 });
 
-sr.reveal('.contacto__datos', {
-	delay: 100,
-	duration: 1500,
-	origin: 'bottom',
-	distance: '100px',
-	reset: true,
-});
-
-sr.reveal('.form', {
+sr.reveal('#contacto', {
 	delay: 100,
 	duration: 1500,
 	origin: 'bottom',
