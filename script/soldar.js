@@ -116,7 +116,7 @@ class ArcWelding {
 		let _x = x || this.mx;
 		let _y = y || this.my;
 		let _ctx = ctx || this.ctx;
-		let particleCount = 15;
+		let particleCount = 5;
 		while (particleCount--) {
 			this.particles.push(new Particle(_x, _y, _ctx));
 		}
