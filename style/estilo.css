@@ -571,6 +571,10 @@ header a {
 	background-color: var(--colorbg1);
 }
 
+#checkbox {
+	display: none;
+}
+
 /* CONTACTO */
 #contacto {
 	padding-top: 60px;
