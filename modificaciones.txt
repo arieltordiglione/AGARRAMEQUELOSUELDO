@@ -70,7 +70,10 @@ EFECTO CHISPAS Y SOLDADURA
 https://codepen.io/citizen55/pen/jQxezO USAR ESTE! EFECTO SOLDADURA
 
 
- 
+ PATH GENERATOR: https://embed.plnkr.co/plunk/KRqEkhvdBS4t0oAC
+
+
+
 
 
 "moladora con chispas"
