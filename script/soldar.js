@@ -103,9 +103,10 @@ class ArcWelding {
 		this.particles = [];
 	}
 
+	//terminar writeWord
 	stop() {
-		this.writeWord() = false;
 		this.clearScreen();
+		this.wwLoop = false;
 	}
 
 	// create particle group
