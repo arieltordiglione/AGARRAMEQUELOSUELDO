@@ -155,7 +155,9 @@ let fecha = document.getElementById('fecha');
 fecha.innerHTML = new Date().getFullYear();
 
 /* SCROLLREVEAL */
+
 window.sr = ScrollReveal();
+
 sr.reveal('.navbar', {
 	delay: 100,
 	duration: 1000,
@@ -221,3 +223,30 @@ sr.reveal('.botones__flotantes', {
 	distance: '400px',
 	reset: true,
 });
+
+/* sr.reveal('.juego__soldadura', {
+	delay: 100,
+	duration: 1000,
+	origin: 'bottom',
+	distance: '100px',
+	reset: true,
+	interval: 100,
+});
+
+sr.reveal('.contacto__container', {
+	delay: 100,
+	duration: 1000,
+	origin: 'bottom',
+	distance: '100px',
+	reset: true,
+	interval: 100,
+});
+
+sr.reveal('.mapa__container', {
+	delay: 100,
+	duration: 1000,
+	origin: 'bottom',
+	distance: '100px',
+	reset: true,
+	interval: 100,
+}); */
