@@ -166,24 +166,24 @@
     </div>
 
     <form class="form"  action="https://formspree.io/f/xyyqzbqy"
-  method="POST">
+  method="POST" autocomplete="off">
       <h3>Envíanos un mail:</h3>
       <div class="inputGroup" name="nombre">
-        <input type="text" name="nombre" required=""  >
+        <input type="text" name="nombre" required="" id="nombre" >
         <label>Nombre</label>
       </div>
 
       <div class="inputGroup">
-      <input type="text" name="telefono" required=""  >
+      <input type="text" name="telefono" required=""  id="telefono">
       <label>Teléfono</label>
       </div>
       <div class="inputGroup">
-        <input type="email" name="email" required=""  >
+        <input type="email" name="email" required=""  id="email">
         <label>Mail</label>
       </div>
 
     <div class="inputGroup">
-      <input type="text" name="mensaje" required="" >
+      <input type="text" name="mensaje" required="" id="mensaje">
       <label>Mensaje</label>
     </div>
     <button class="boton-form type1" type="submit">Enviar</button>
