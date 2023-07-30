@@ -116,7 +116,7 @@ class ArcWelding {
 		let _x = x || this.mx;
 		let _y = y || this.my;
 		let _ctx = ctx || this.ctx;
-		let particleCount = 5;
+		let particleCount = 5; /* cantidad de chispas. default=15 */
 		while (particleCount--) {
 			this.particles.push(new Particle(_x, _y, _ctx));
 		}
@@ -341,7 +341,7 @@ class Stitch {
 		this.x = x;
 		this.y = y;
 		this.ctx = ctx;
-		this.radius = radius || 10;
+		this.radius = radius || 7; /* grosor de puntada */
 		// temperature in degrees Celsius
 		this.dC = 0.4;
 		this.hue = 33;

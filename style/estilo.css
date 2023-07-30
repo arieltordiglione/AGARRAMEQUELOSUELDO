@@ -493,7 +493,7 @@ header a {
 
 /* JUEGO */
 
-/* BOTON JUEGO */
+/* BOTON JUEGO BOTON DE INDEX*/
 .juego__soldadura {
 	display: grid;
 	place-items: center;
@@ -525,7 +525,10 @@ header a {
 	background-color: var(--colorbg1);
 }
 
-/* JUEGO */
+/* JUEGO  juegossoldadura.html*/
+.juego {
+	overflow-y: hidden;
+}
 #container {
 	position: relative;
 	width: 100%;
@@ -539,6 +542,7 @@ header a {
 	left: 0;
 	top: 0;
 	z-index: 1;
+	width: 100%;
 }
 
 #btncontainer {
@@ -573,6 +577,18 @@ header a {
 
 #checkbox {
 	display: none;
+}
+
+.patrones {
+	display: grid;
+	place-items: center;
+}
+
+.patrones__soldadura {
+	position: relative;
+	margin: 5px;
+	width: 50%;
+	height: 30vw;
 }
 
 /* CONTACTO */
