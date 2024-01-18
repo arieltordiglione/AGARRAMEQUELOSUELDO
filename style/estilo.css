@@ -466,7 +466,7 @@ header a {
 }
 
 .carousel img {
-	height: 340px; /* VERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR */ /* VERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR */
+	height: 100%;
 	object-fit: cover;
 	user-select: none;
 	margin-left: 14px;
