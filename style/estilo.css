@@ -389,6 +389,7 @@ header a {
 .servicios__detalle summary {
 	cursor: pointer;
 	transition: 1s;
+	color: #f2f2f2;
 }
 
 .servicios__detalle details {
@@ -474,6 +475,7 @@ header a {
 		100% / 3
 	); /* VERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR */ /* VERRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRRR */
 	cursor: grab;
+	aspect-ratio: 1 / 1;
 }
 .carousel img:first-child {
 	margin-left: 0px;
